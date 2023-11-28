@@ -4,5 +4,9 @@
   "toggle": "Toggle",
   "yazyk": "EN",
   "glavnaya-stranica": "Main page",
-  "o-nas": "About us"
+  "o-nas": "About us",
+  "page-not-found": "Page not found",
+  "something-went-wrong": "Something went wrong",
+  "refresh-page": "Refresh page",
+  "create-bug": "create bug"
 }

@@ -4,5 +4,9 @@
   "toggle": "Переключать",
   "yazyk": "RU",
   "glavnaya-stranica": "Главная страница",
-  "o-nas": "О нас"
+  "o-nas": "О нас",
+  "page-not-found": "Страница не найдена",
+  "something-went-wrong": "Что-то пошло не так.",
+  "refresh-page": "Обновить страницу",
+  "create-bug": "создать ошибку"
 }

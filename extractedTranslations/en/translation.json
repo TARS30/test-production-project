@@ -1,8 +1,12 @@
 {
   "cat": "cat",
+  "create-bug": "create-bug",
   "glavnaya-stranica": "glavnaya-stranica",
   "loading": "loading",
   "o-nas": "o-nas",
+  "page-not-found": "page-not-found",
+  "refresh-page": "refresh-page",
+  "something-went-wrong": "something-went-wrong",
   "toggle": "toggle",
   "velosiped": "velosiped",
   "yazyk": "yazyk"
