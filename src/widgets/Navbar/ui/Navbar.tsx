@@ -15,10 +15,10 @@ export function Navbar({ className }: NavbarProps) {
     <div className={classNames(styles.navbar, {}, [className])}>
       <div className={styles.links}>
         <AppLink theme={AppLinkTheme.SECONDARY} to="/">
-          {t('Главная страница')}
+          {t('glavnaya-stranica')}
         </AppLink>
         <AppLink theme={AppLinkTheme.SECONDARY} to="/about">
-          {t('О нас')}
+          {t('o-nas')}
         </AppLink>
       </div>
     </div>

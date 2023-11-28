@@ -1,6 +1,9 @@
 {
-  "Переключить": "Toggle",
-  "Главная страница": "Main Page",
-  "О нас": "About Us",
-  "Язык": "Lang"
+  "cat": "cat",
+  "glavnaya-stranica": "glavnaya-stranica",
+  "loading": "loading",
+  "o-nas": "o-nas",
+  "toggle": "toggle",
+  "velosiped": "velosiped",
+  "yazyk": "yazyk"
 }

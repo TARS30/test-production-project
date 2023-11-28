@@ -1,7 +1,8 @@
 {
-  "Перевод": "Translate",
-  "Главная страница": "Main page",
-  "Язык": "EN",
-  "О нас": "About Us",
-  "Переключить": "Toggle"
+  "loading": "Loading",
+  "cat": "Cat",
+  "toggle": "Toggle",
+  "yazyk": "EN",
+  "glavnaya-stranica": "Main page",
+  "o-nas": "About us"
 }

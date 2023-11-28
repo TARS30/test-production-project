@@ -1,6 +1,9 @@
 {
-  "Переключить": "Переключить",
-  "Главная страница": "Главная страница",
-  "О нас": "О нас",
-  "Язык": "Язык"
+  "cat": "кот",
+  "glavnaya-stranica": "glavnaya-stranica",
+  "loading": "loading",
+  "o-nas": "o-nas",
+  "toggle": "toggle",
+  "velosiped": "velosiped",
+  "yazyk": "yazyk"
 }

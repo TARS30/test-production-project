@@ -24,7 +24,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         className,
       ])}
     >
-      <button onClick={onToggle}>{t('Toggle')}</button>
+      <button onClick={onToggle}>{t('toggle')}</button>
       <div className={styles.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={styles.lang} />
