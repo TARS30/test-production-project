@@ -4,34 +4,44 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "standard-with-typescript",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
+    'plugin:i18next/recommended',
+    'plugin:react/recommended',
+    'airbnb',
   ],
-  overrides: [
-    {
-      env: {
-        node: true,
-      },
-      files: [".eslintrc.{js,cjs}"],
-      parserOptions: {
-        sourceType: "script",
-      },
-    },
-  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  plugins: ["react"],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'i18next',
+  ],
   rules: {
-    "react/jsx-indent": [2, 2],
-    "@typescript-eslint/strict-boolean-expressions": "warn",
-    "@typescript-eslint/prefer-nullish-coalescing": "warn",
-    "@typescript-eslint/explicit-function-return-type": "warn",
-    "indent": ["error", 2],
-    "@typescript-eslint/no-floating-promises": "warn",
-    "react/no-deprecated": 'warn',
-    "@typescript-eslint/naming-convention": "off"
-},
+    'react/jsx-indent': [2, 2],
+    'react/jsx-indent-props': [2, 2],
+    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+    'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
+    'no-unused-vars': 'warn',
+    'react/require-default-props': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-props-no-spreading': 'warn',
+    'react/function-component-definition': 'off',
+    'no-shadow': 'off',
+    'import/extensions': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'no-underscore-dangle': 'off',
+    'linebreak-style': 0,
+    'react/button-has-type': 0,
+    'i18next/no-literal-string': ['error', { markupOnly: true }],
+
+  },
+  globals: {
+    __IS_DEV__: true,
+  },
 };
