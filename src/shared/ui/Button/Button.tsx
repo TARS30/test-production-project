@@ -1,5 +1,7 @@
-import { type ButtonHTMLAttributes, type FC } from 'react';
+import React, { type ButtonHTMLAttributes, type FC } from 'react';
+// @ts-ignore
 import { classNames } from 'shared/lib/classNames/classNames';
+// @ts-ignore
 import styles from './Button.module.scss';
 
 export enum ThemeButton {

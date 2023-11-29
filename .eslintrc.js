@@ -42,13 +42,25 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'linebreak-style': 0,
     'react/button-has-type': 0,
-    'i18next/no-literal-string': ['warn', { markupOnly: true }],
+    'i18next/no-literal-string': ['warn', {
+      markupOnly: true,
+      ignoreAttribute: ['foo'],
+    }],
     'max-len': ['error', {
       ignoreComments: true,
+      code: 100,
     }],
 
   },
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 };
