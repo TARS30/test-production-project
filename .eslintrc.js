@@ -6,10 +6,11 @@ module.exports = {
 
   },
   extends: [
-    'plugin:i18next/recommended',
-    'plugin:react/recommended',
-    'airbnb',
-  ],
+      'plugin:i18next/recommended',
+      'plugin:react/recommended',
+      'airbnb',
+      'plugin:storybook/recommended'
+    ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -44,7 +45,7 @@ module.exports = {
     'react/button-has-type': 0,
     'i18next/no-literal-string': ['warn', {
       markupOnly: true,
-      ignoreAttribute: ['foo'],
+      ignoreAttribute: ['data-testid', 'to'],
     }],
     'max-len': ['error', {
       ignoreComments: true,

@@ -1,11 +1,8 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-// такой импорт исключительно для обхода ошибки
-import { BundleAnalyzerPlugin as CopyOfBundleAnalyzerPlugin }
-  from 'webpack-bundle-analyzer';
-
-import { type BuildOptions } from './types/config';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { BuildOptions } from './types/config';
 
 export function buildPlugins({
   paths,
@@ -24,7 +21,7 @@ export function buildPlugins({
       __IS_DEV__: JSON.stringify(isDev),
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new CopyOfBundleAnalyzerPlugin({
+    new BundleAnalyzerPlugin({
       openAnalyzer: false,
     }),
   ];

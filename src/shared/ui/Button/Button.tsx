@@ -1,11 +1,10 @@
 import React, { type ButtonHTMLAttributes, type FC } from 'react';
-// @ts-ignore
 import { classNames } from 'shared/lib/classNames/classNames';
-// @ts-ignore
 import styles from './Button.module.scss';
 
 export enum ThemeButton {
   CLEAR = 'clear',
+  OUTLINE = 'outline'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -20,6 +19,7 @@ export const Button: FC<ButtonProps> = (props) => {
   } = props;
   return (
     <button
+      type="button"
       className={classNames(styles.Button, { [styles[theme]]: true }, [
         className,
       ])}

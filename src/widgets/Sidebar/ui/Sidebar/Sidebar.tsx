@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { LangSwitcher } from 'widgets/LangSwitcher';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useState } from 'react';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { LangSwitcher } from 'widgets/LangSwitcher';
+import { Button } from 'shared/ui/Button/Button';
+import { useTranslation } from 'react-i18next';
 
 import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
-  className?: string
+  className?: string;
 }
 
 export const Sidebar = ({ className }: SidebarProps) => {
@@ -25,12 +26,12 @@ export const Sidebar = ({ className }: SidebarProps) => {
         className,
       ])}
     >
-      <button
+      <Button
         data-testid="sidebar-toggle"
         onClick={onToggle}
       >
         {t('toggle')}
-      </button>
+      </Button>
       <div className={styles.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={styles.lang} />

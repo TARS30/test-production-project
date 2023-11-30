@@ -1,12 +1,12 @@
+import { RouteProps } from 'react-router-dom';
 import { MainPage } from 'pages/MainPage';
 import { AboutPage } from 'pages/AboutPage';
 import { NotFound } from 'pages/NotFoundPage';
-import { type RouteProps } from 'react-router-dom';
 
 export enum AppRoutes {
   MAIN = 'main',
   ABOUT = 'about',
-  NOT_FOUND = 'not_found'
+  NOT_FOUND = 'not_found',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
