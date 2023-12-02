@@ -8,5 +8,6 @@
   "page-not-found": "Страница не найдена",
   "something-went-wrong": "Что-то пошло не так.",
   "refresh-page": "Обновить страницу",
-  "create-bug": "создать ошибку"
+  "create-bug": "создать ошибку",
+  "one-more-test-button": "еще одна кнопка тестирования"
 }

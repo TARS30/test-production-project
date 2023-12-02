@@ -35,7 +35,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
       <Button
         onClick={onToggle}
       >
-        {t('one more test button')}
+        {t('one-more-test-button')}
       </Button>
       <div className={styles.switchers}>
         <ThemeSwitcher />
