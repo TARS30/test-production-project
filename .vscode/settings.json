@@ -1,0 +1,16 @@
+{
+    "i18n-ally.localesPaths": [
+        "public/locales",
+        "src/shared/config/i18n"
+    ],
+    "i18n-ally.keystyle": "nested",
+    "eslint.timeBudget.onFixes": {
+        
+        "warn": 3000,
+        "error": 6000
+    },
+     "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true
+  }
+}
