@@ -6,7 +6,7 @@
 import path from 'path';
 
 export default {
-    clearMocks: true,
+  clearMocks: true,
   testEnvironment: 'jsdom',
   coveragePathIgnorePatterns: [
     '\\\\node_modules\\\\',

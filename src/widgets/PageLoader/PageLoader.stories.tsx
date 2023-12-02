@@ -5,14 +5,14 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { PageLoader } from './PageLoader';
 
 export default {
-    title: 'shared/Loader',
-    component: PageLoader,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-    args: {
-        to: '/',
-    },
+  title: 'shared/Loader',
+  component: PageLoader,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+  args: {
+    to: '/',
+  },
 } as ComponentMeta<typeof PageLoader>;
 
 const Template: ComponentStory<typeof PageLoader> = (args) => <PageLoader {...args} />;
