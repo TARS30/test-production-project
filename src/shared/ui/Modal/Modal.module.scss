@@ -1,0 +1,52 @@
+.Modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.2s ease 0s;
+  pointer-events: none;
+}
+
+.content {
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease 0s;
+  transform: scale(0.5);
+  max-width: 60%;
+
+  // background: var(--bg-color); // doesn't work
+}
+
+.light .content {
+  background: #c2c2c2;
+  color: #252525;
+}
+
+.dark .content {
+  background: #3a3a3a;
+  color: #cacaca;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.opened {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: var(--modal-z-index);
+  transition: all 0.2s ease 0s;
+
+  .content {
+    transition: all 0.2s ease 0s;
+    transform: scale(1);
+  }
+}

@@ -1,4 +1,4 @@
-:root {
+body {
   --font-family-main: consolas, "Times New Roman", serif;
   --font-size-m: 16px;
   --font-line-m: 24px;
@@ -12,8 +12,15 @@
 
   // sizes
 
-  --accent-color: #b94d00;
   --navbar-height: 50px;
   --sidebar-width: 250px;
   --sidebar-width-collapsed: 80px;
+
+  // colors
+
+  --accent-color: #b94d00;
+  --overlay-bg-color: #000000a1;
+
+  // z-indexes
+  --modal-z-index: 100;
 }

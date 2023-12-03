@@ -9,5 +9,6 @@
   "something-went-wrong": "Что-то пошло не так.",
   "refresh-page": "Обновить страницу",
   "create-bug": "создать ошибку",
-  "one-more-test-button": "еще одна кнопка тестирования"
+  "one-more-test-button": "еще одна кнопка тестирования",
+  "login": "Войти"
 }
