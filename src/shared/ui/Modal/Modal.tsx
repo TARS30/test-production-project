@@ -45,13 +45,15 @@ export const Modal = (props : ModalProps) => {
     }
   };
 
+  const cross = '&#10006;';
+
   return (
 
     <Portal element={document.getElementById('root')}>
       <div className={classNames(styles.Modal, mods, [className])}>
         <div onClick={closeHandler} className={styles.overlay}>
           <div onClick={onContentClick} className={styles.content}>
-            <button onClick={closeHandler}>close</button>
+            <button onClick={closeHandler}>{cross}</button>
             {children}
             Lorem ipsum dolor sit amet,
           </div>
