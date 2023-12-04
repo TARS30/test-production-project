@@ -34,6 +34,17 @@
 		"\t\t</div>"
 		"\t);"
 		"}",
-		]
+	]
+	},
+	"new test template": {
+		"prefix": "test",
+		"body": [
+			"describe('${TM_FILENAME_BASE/(.*?)\\..*/$1/}', () => {",
+			"\ttest('$1', () => {",
+			"\t\t",
+		    "\t\texpect($2()).toEqual();",
+		    "\t});",
+			"});"
+	]
 	},
 }
