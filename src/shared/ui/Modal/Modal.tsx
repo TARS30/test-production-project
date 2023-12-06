@@ -1,6 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 
-import React, { ReactNode, useCallback, useEffect } from 'react';
+import React, {
+  ReactNode, useCallback, useEffect, useState,
+} from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
 import styles from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
@@ -11,18 +13,27 @@ interface ModalProps {
     children?: ReactNode;
     isOpen: boolean;
     onClose: () => void;
+    lazy?:boolean;
 }
 
 export const Modal = (props : ModalProps) => {
   const { theme } = useTheme();
 
   const {
-    className, children, isOpen, onClose,
+    className, children, isOpen, onClose, lazy,
   } = props;
+
+  const [isMounted, setIsMounted] = useState(false);
 
   const mods: Record<string, boolean> = {
     [styles.opened]: isOpen,
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
 
   const onContentClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -47,9 +58,13 @@ export const Modal = (props : ModalProps) => {
     }
   };
 
+  if (lazy && !isMounted) {
+    return null;
+  }
+
   return (
-    <Portal element={document.getElementById('root')}>
-      <div className={classNames(styles.Modal, mods, [className, theme])}>
+    <Portal element={document.body}>
+      <div className={classNames(styles.Modal, mods, [className, theme, 'app_modal'])}>
         <div onClick={closeHandler} className={styles.overlay}>
           <div onClick={onContentClick} className={styles.content}>
             <Button
@@ -57,11 +72,9 @@ export const Modal = (props : ModalProps) => {
               theme={ButtonTheme.CLEAR}
               onClick={closeHandler}
             >
-              &#10006;
-
+              <span>&#10006;</span>
             </Button>
             {children}
-            Lorem ipsum dolor sit amet,
           </div>
         </div>
       </div>

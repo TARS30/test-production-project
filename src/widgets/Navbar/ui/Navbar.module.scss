@@ -12,3 +12,9 @@
   display: flex;
   gap: 15px;
 }
+
+.btn {
+  &:hover {
+    background: var(--hovered-bg-color);
+  }
+}
