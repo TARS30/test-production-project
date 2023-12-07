@@ -3,6 +3,11 @@
   color: var(--inverted-primary-color);
   padding: 5px 10px;
   transition: all 0.2s ease 0s;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
 .clear {

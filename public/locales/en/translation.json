@@ -10,5 +10,11 @@
   "refresh-page": "Refresh page",
   "create-bug": "create bug",
   "one-more-test-button": "one more test button",
-  "login": "Login"
+  "login": "Login",
+  "username": "username",
+  "password": "password",
+  "wrong-username-or-password": "wrong username or password",
+  "login-failed": "Login failed",
+  "login-page": "Login Page",
+  "logout": "Logout"
 }

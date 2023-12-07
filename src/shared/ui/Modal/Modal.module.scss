@@ -8,6 +8,12 @@
   opacity: 0;
   transition: all 0.2s ease 0s;
   pointer-events: none;
+
+  span {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
 }
 
 .overlay {

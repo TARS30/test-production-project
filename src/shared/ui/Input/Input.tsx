@@ -21,6 +21,7 @@ export const Input = memo((props: InputProps) => {
     className,
     type = 'text',
     placeholder,
+    disabled,
   } = props;
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,6 +36,7 @@ export const Input = memo((props: InputProps) => {
         value={value}
         onChange={onChangeHandler}
         placeholder={placeholder}
+        disabled={disabled}
       />
     </div>
   );

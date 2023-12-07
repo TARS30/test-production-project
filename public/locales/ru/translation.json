@@ -10,5 +10,11 @@
   "refresh-page": "Обновить страницу",
   "create-bug": "создать ошибку",
   "one-more-test-button": "еще одна кнопка тестирования",
-  "login": "Войти"
+  "login": "Войти",
+  "password": "пароль",
+  "username": "имя пользователя",
+  "wrong-username-or-password": "неправильное имя пользователя или пароль",
+  "login-failed": "Ошибка авторизации",
+  "login-page": "Страница авторизации",
+  "logout": "Выйти"
 }
