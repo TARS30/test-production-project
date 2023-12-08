@@ -22,21 +22,33 @@ Primary.decorators = [StoreDecorator({
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
-Dark.decorators = [StoreDecorator({
-  loginForm: { username: 'username', password: 'password' },
-})];
+Dark.decorators = [ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    loginForm: { username: 'username', password: 'password' },
+  })];
 
 export const Error = Template.bind({});
 Error.args = {};
-Error.decorators = [ThemeDecorator(Theme.DARK)];
 Error.decorators = [StoreDecorator({
   loginForm: { username: 'username', password: 'password', error: 'error' },
 })];
 
+export const ErrorDark = Template.bind({});
+ErrorDark.args = {};
+ErrorDark.decorators = [ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    loginForm: { username: 'username', password: 'password', error: 'error' },
+  })];
+
 export const Loading = Template.bind({});
 Loading.args = {};
-Loading.decorators = [ThemeDecorator(Theme.DARK)];
 Loading.decorators = [StoreDecorator({
   loginForm: { username: 'username', password: 'password', isLoading: true },
 })];
+
+export const LoadingDark = Template.bind({});
+LoadingDark.args = {};
+LoadingDark.decorators = [ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    loginForm: { username: 'username', password: 'password', isLoading: true },
+  })];
