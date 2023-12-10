@@ -1,0 +1,64 @@
+.link {
+  gap: 10px;
+  width: fit-content;
+  position: relative;
+  text-decoration: none;
+
+  & span {
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  opacity: 1;
+  transition: all 0.3s ease 0s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    border-bottom: 1px solid var(--accent-color);
+    transition: width 0.3s ease 0s;
+  }
+
+  &:hover::after {
+    width: 100%;
+    transition: width 0.3s ease 0s;
+  }
+}
+
+.icon {
+  fill: var(--inverted-secondary-color);
+  transition: fill 0.2s ease 0s;
+  width: 25px;
+  height: 25px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &:hover .icon {
+    fill: var(--accent-color);
+  }
+}
+
+.collapsed {
+  .link {
+    width: 0;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+  }
+
+  .item {
+    justify-content: center;
+  }
+
+  .items {
+    margin-left: 0;
+    gap: 30px;
+  }
+}
