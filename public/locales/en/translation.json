@@ -16,5 +16,6 @@
   "wrong-username-or-password": "wrong username or password",
   "login-failed": "Login failed",
   "login-page": "Login Page",
-  "logout": "Logout"
+  "logout": "Logout",
+  "profile": "Profile"
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
@@ -9,7 +9,9 @@ import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import HomeIcon from 'shared/assets/icons/home.svg';
 import ListIcon from 'shared/assets/icons/list.svg';
+import { SidebarItemsList } from 'widgets/Sidebar/model/items';
 import styles from './Sidebar.module.scss';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
   className?: string;
@@ -21,6 +23,14 @@ export const Sidebar = ({ className }: SidebarProps) => {
   const onToggle = () => {
     setCollapsed((prev) => !prev);
   };
+
+  const itemsList = useMemo(() => SidebarItemsList.map((item) => (
+    <SidebarItem
+      item={item}
+      collapsed={collapsed}
+      key={item.path}
+    />
+  )), [collapsed]);
 
   return (
     <div
@@ -40,40 +50,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         {collapsed ? '>' : '<'}
       </Button>
       <div className={styles.items}>
-        <div className={styles.item}>
-          <AppLink
-            theme={AppLinkTheme.SECONDARY}
-            to={RoutePath.main}
-          >
-            {collapsed
-              ? <HomeIcon className={styles.icon} />
-              : (
-                <div className={styles.item}>
-                  <HomeIcon className={styles.icon} />
-                  <span className={styles.link}>
-                    {t('glavnaya-stranica')}
-                  </span>
-                </div>
-              )}
-          </AppLink>
-        </div>
-
-        <div className={styles.item}>
-          <AppLink
-            theme={AppLinkTheme.SECONDARY}
-            to={RoutePath.about}
-          >
-            {collapsed
-              ? <ListIcon className={styles.icon} />
-              : (
-                <div className={styles.item}>
-                  <ListIcon className={styles.icon} />
-                  <span className={styles.link}>{t('o-nas')}</span>
-                </div>
-              )}
-          </AppLink>
-        </div>
-
+        {itemsList}
       </div>
       <div className={styles.switchers}>
         <ThemeSwitcher />
