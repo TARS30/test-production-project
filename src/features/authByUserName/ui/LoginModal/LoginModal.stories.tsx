@@ -23,5 +23,6 @@ Primary.decorators = [StoreDecorator({})];
 export const Dark = Template.bind({});
 Dark.args = {
   isOpen: true,
+
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

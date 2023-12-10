@@ -5,10 +5,6 @@ import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 
 import axios from 'axios';
 
-export default {
-  get: jest.fn(() => Promise.resolve({ data: {} })),
-};
-
 interface LoginByUsernameProps {
     username: string;
     password: string

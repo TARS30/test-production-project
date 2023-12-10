@@ -5,23 +5,36 @@ import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { DynamicModuleLoader, ReducersList } from
+  'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
-import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
-import { loginActions } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import styles from './LoginForm.module.scss';
 
-interface LoginFormProps {
+export interface LoginFormProps {
     className?: string;
 }
 
-export const LoginForm = memo(({ className }: LoginFormProps) => {
+const initialReducers:ReducersList = {
+  loginForm: loginReducer,
+};
+
+const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
 
-  const {
-    username, password, error, isLoading,
-  } = useSelector(getLoginState);
+  const username = useSelector(getLoginUsername);
+
+  const password = useSelector(getLoginPassword);
+
+  const error = useSelector(getLoginError);
+
+  const isLoading = useSelector(getLoginIsLoading);
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value));
@@ -37,39 +50,49 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
   }, [dispatch, password, username]);
 
   return (
-    <form onSubmit={onLoginClick} className={classNames(styles.LoginForm, {}, [className])}>
-      {!error && <Text title={t('login-page')} />}
-      {error && (
-      <Text
-        theme={TextTheme.ERROR}
-        title={t('login-failed')}
-        text={t('wrong-username-or-password')}
-      />
-      )}
-      <Input
-        onChange={onChangeUsername}
-        placeholder={t('username')}
-        type="text"
-        className={styles.input}
-        value={username}
-        disabled={isLoading}
-      />
-      <Input
-        onChange={onChangePassword}
-        placeholder={t('password')}
-        type="text"
-        className={styles.input}
-        value={password}
-        disabled={isLoading}
-      />
-      <Button
-        disabled={isLoading}
-        theme={ButtonTheme.OUTLINE}
-        className={styles.loginBtn}
-        type="submit"
+    <DynamicModuleLoader
+      removeAfterUnmount
+      reducers={initialReducers}
+    >
+      <form
+        onSubmit={onLoginClick}
+        className={classNames(styles.LoginForm, {}, [className])}
       >
-        {t('login')}
-      </Button>
-    </form>
+        {!error && <Text title={t('login-page')} />}
+        {error && (
+        <Text
+          theme={TextTheme.ERROR}
+          title={t('login-failed')}
+          text={t('wrong-username-or-password')}
+        />
+        )}
+        <Input
+          onChange={onChangeUsername}
+          placeholder={t('username')}
+          type="text"
+          className={styles.input}
+          value={username}
+          disabled={isLoading}
+        />
+        <Input
+          onChange={onChangePassword}
+          placeholder={t('password')}
+          type="text"
+          className={styles.input}
+          value={password}
+          disabled={isLoading}
+        />
+        <Button
+          disabled={isLoading}
+          theme={ButtonTheme.OUTLINE}
+          className={styles.loginBtn}
+          type="submit"
+        >
+          {t('login')}
+        </Button>
+      </form>
+    </DynamicModuleLoader>
   );
 });
+
+export default LoginForm;

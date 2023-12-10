@@ -8,12 +8,6 @@
   opacity: 0;
   transition: all 0.2s ease 0s;
   pointer-events: none;
-
-  span {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-  }
 }
 
 .overlay {
@@ -33,6 +27,7 @@
   max-width: 60%;
   background: var(--bg-color);
   flex: 0 1 400px;
+  margin: 0 auto;
 }
 
 .opened {
@@ -48,5 +43,8 @@
 }
 
 .button {
+  position: absolute;
+  top: 5px;
+  right: 0;
   padding: 0 10px;
 }

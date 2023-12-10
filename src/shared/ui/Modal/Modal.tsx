@@ -7,6 +7,7 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import styles from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
 import { Button, ButtonTheme } from '../Button/Button';
+import { Loader } from '../Loader';
 
 interface ModalProps {
     className?: string;
