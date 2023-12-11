@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ProfileScheme } from '../types/Profile';
+import { ProfileScheme } from '../types/profile';
 
 const initialState: ProfileScheme = {
   readonly: true,
