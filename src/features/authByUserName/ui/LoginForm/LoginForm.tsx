@@ -10,18 +10,18 @@ import { DynamicModuleLoader, ReducersList } from
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
-import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import styles from './LoginForm.module.scss';
 
 export interface LoginFormProps {
     className?: string;
-    onSuccess: () => void
+    onSuccess: () => void;
 }
 
-const initialReducers:ReducersList = {
+const initialReducers: ReducersList = {
   loginForm: loginReducer,
 };
 
@@ -49,6 +49,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const onLoginClick = useCallback(async (e) => {
     e.preventDefault();
     const result = await dispatch(loginByUsername({ username, password }));
+
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess();
     }

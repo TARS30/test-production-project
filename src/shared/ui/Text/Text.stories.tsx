@@ -30,7 +30,7 @@ export const Error = Template.bind({});
 Error.args = {
   title: 'Title of component "Text"',
   text: 'Some text of "Text" component',
-  theme: 'error',
+  theme: TextTheme.ERROR,
 };
 
 export const ErrorDark = Template.bind({});

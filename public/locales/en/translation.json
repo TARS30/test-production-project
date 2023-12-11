@@ -17,5 +17,9 @@
   "login-failed": "Login failed",
   "login-page": "Login Page",
   "logout": "Logout",
-  "profile": "Profile"
+  "profile": "Profile",
+  "profile-0": "Profile",
+  "edit": "Edit",
+  "name": "Name",
+  "last-name": "Last name"
 }

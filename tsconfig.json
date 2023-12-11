@@ -1,5 +1,5 @@
-// cspell:disable
 {
+  // cspell:disable
   "compilerOptions": {
     "outDir": "./dist/",
     // Подсвечивает все места где не указан тип
@@ -12,6 +12,7 @@
     "jsx": "react-jsx",
     // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "allowJs": true,
+    "strict": true,
     "moduleResolution": "node",
     // Для абсолютного импорта
     "baseUrl": ".",
@@ -43,5 +44,7 @@
     "./config/jest/jestSetup.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx"
-, "src/features/authByUserName/model/services/loginByUsername/loginByUsername.test.ts-jest"  ]
+,   ]
 }
+
+//"src/features/AuthByUsername/model/services/loginByUsername/loginByUsername.test.ts-jest"

@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 
 import React, {
   ReactNode, useCallback, useEffect, useState,
@@ -21,12 +21,16 @@ export const Modal = (props : ModalProps) => {
   const { theme } = useTheme();
 
   const {
-    className, children, isOpen, onClose, lazy,
+    className,
+    children,
+    isOpen,
+    onClose,
+    lazy,
   } = props;
 
   const [isMounted, setIsMounted] = useState(false);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [styles.opened]: isOpen,
   };
 
