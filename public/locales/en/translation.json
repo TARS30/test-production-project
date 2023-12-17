@@ -21,5 +21,17 @@
   "profile-0": "Profile",
   "edit": "Edit",
   "name": "Name",
-  "last-name": "Last name"
+  "last-name": "Last name",
+  "occurred-error": "Occurred error",
+  "try-to-reload-the-page": "Try to reload the page",
+  "close": "Close",
+  "cancel": "Cancel",
+  "save": "Save",
+  "age": "Age",
+  "country": "Country",
+  "user-name": "User name",
+  "city": "City",
+  "avatar": "Avatar",
+  "choose-currency": "Choose currency",
+  "choose-country": "Choose country"
 }

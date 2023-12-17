@@ -26,6 +26,13 @@
   background: none;
 }
 
+.outline_accent {
+  border: 1px solid var(--accent-color);
+  border-radius: 3px;
+  color: var(--accent-color);
+  background: none;
+}
+
 .background {
   background-color: var(--bg-color);
   color: var(--primary-color);
