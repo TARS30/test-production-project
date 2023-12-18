@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { useCallback, useState, memo } from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTheme } from 'app/providers/ThemeProvider';
-import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import { LoginModal } from 'features/AuthByUsername';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
