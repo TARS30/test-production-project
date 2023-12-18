@@ -33,5 +33,6 @@
   "country": "Страна",
   "user-name": "Имя пользователя",
   "choose-currency": "Выберите Валюту",
-  "choose-country": "Выберите страну"
+  "choose-country": "Выберите страну",
+  "error-occured": "Произошла ошибка"
 }

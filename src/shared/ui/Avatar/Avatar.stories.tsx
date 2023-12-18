@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Avatar, AvatarSizes } from './Avatar';
-import wojak from './wojak.jpg';
+import wojak from '../../assets/tests/wojak.jpg';
 
 export default {
   title: 'shared/Avatar',

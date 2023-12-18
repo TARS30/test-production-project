@@ -33,5 +33,6 @@
   "city": "City",
   "avatar": "Avatar",
   "choose-currency": "Choose currency",
-  "choose-country": "Choose country"
+  "choose-country": "Choose country",
+  "error-occured": "Error occured"
 }
