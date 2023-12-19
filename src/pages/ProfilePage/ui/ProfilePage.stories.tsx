@@ -4,7 +4,6 @@ import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import wojak from '../../../shared/assets/tests/wojak.jpg';
 import ProfilePage from './ProfilePage';
 
 export default {
@@ -27,7 +26,6 @@ Normal.decorators = [StoreDecorator({
       first: 'sanya',
       username: 'tars',
       lastname: 'chernov',
-      avatar: wojak,
       country: Country.Belarus,
       currency: Currency.USD,
     },
@@ -43,7 +41,6 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
       first: 'sanya',
       username: 'tars',
       lastname: 'chernov',
-      avatar: wojak,
       country: Country.Belarus,
       currency: Currency.USD,
     },
