@@ -4,7 +4,6 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import wojak from '../../../../shared/assets/tests/wojak.jpg';
 import { ProfileCard } from './ProfileCard';
 
 export default {
@@ -25,7 +24,6 @@ Primary.args = {
     first: 'sanya',
     username: 'tars',
     lastname: 'chernov',
-    avatar: wojak,
     country: Country.Belarus,
     currency: Currency.USD,
   },
@@ -44,7 +42,6 @@ ReadOnly.args = {
     first: 'sanya',
     username: 'tars',
     lastname: 'chernov',
-    avatar: wojak,
     country: Country.Belarus,
     currency: Currency.USD,
   },
@@ -65,7 +62,6 @@ Dark.args = {
     first: 'sanya',
     username: 'tars',
     lastname: 'chernov',
-    avatar: wojak,
     country: Country.Belarus,
     currency: Currency.USD,
   },

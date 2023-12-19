@@ -22,17 +22,8 @@
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/utimur/production_project_code_source.git"
-  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/utimur/production_project_code_source/issues"
-  },
-  "homepage": "https://github.com/utimur/production_project_code_source#readme",
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
