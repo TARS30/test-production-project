@@ -34,5 +34,6 @@
   "user-name": "Имя пользователя",
   "choose-currency": "Выберите Валюту",
   "choose-country": "Выберите страну",
-  "error-occured": "Произошла ошибка"
+  "error-occured": "Произошла ошибка",
+  "articles": "Статьи"
 }
