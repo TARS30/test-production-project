@@ -47,4 +47,10 @@
 			"});"
 	]
 	},
+	 "fileName": {
+		"prefix": "name",
+		"body": [
+			"${TM_FILENAME_BASE}",
+		],
+	},
 }
