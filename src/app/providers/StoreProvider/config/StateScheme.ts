@@ -9,12 +9,14 @@ import { ProfileScheme } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import { To } from 'history';
 import { NavigateOptions } from 'react-router';
+import { articleDetailsScheme } from 'entities/Article';
 
 export interface StateScheme {
-    counter: CounterScheme;
     user: UserScheme;
+    counter: CounterScheme;
     loginForm?: LoginScheme;
     profile?: ProfileScheme;
+    articleDetails?: articleDetailsScheme
 }
 
 export type StateSchemeKey = keyof StateScheme

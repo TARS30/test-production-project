@@ -35,5 +35,6 @@
   "choose-currency": "Выберите Валюту",
   "choose-country": "Выберите страну",
   "error-occured": "Произошла ошибка",
-  "articles": "Статьи"
+  "articles": "Статьи",
+  "article-wasnt-found": "Статья не найдена"
 }
