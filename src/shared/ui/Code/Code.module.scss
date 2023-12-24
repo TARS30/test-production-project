@@ -1,0 +1,22 @@
+.Code {
+  border: 2px solid var(--accent-color);
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+  background: var(--code-bg);
+  overflow: auto;
+}
+
+.copyButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.codeIcon {
+  stroke: var(--primary-color);
+
+  &:hover {
+    fill: var(--hovered-icon);
+  }
+}

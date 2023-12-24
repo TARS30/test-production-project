@@ -16,12 +16,12 @@ export interface ArticleCodeBlock extends ArticleBlockBase {
 export interface ArticleImageBlock extends ArticleBlockBase {
     src: string
     title: string
-    image: ArticleBlockType.IMAGE;
+    type: ArticleBlockType.IMAGE;
 }
 export interface ArticleTextBlock extends ArticleBlockBase {
     title?: string
     paragraphs: string[]
-    text: ArticleBlockType.TEXT;
+    type: ArticleBlockType.TEXT;
 }
 
 export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock

@@ -6,7 +6,7 @@ export const getArticleDetailsData = (
 
 export const getArticleDetailsIsLoading = (
   state: StateScheme,
-) => state.articleDetails?.isLoading;
+) => state.articleDetails?.isLoading || false;
 
 export const getArticleDetailsError = (
   state: StateScheme,
