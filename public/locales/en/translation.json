@@ -37,5 +37,7 @@
   "error-occured": "Error occured",
   "articles": "Articles",
   "wasn't": "Article wasn't found",
-  "article-wasnt-found": "Article wasn't found"
+  "article-wasnt-found": "Article wasn't found",
+  "comments": "Comments",
+  "no-comments-yet": "No comments yet"
 }

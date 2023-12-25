@@ -94,12 +94,6 @@
       "text": "some comment 2",
       "articleId": "1",
       "userId": "2"
-    },
-    {
-      "id": "3",
-      "text": "some comment3",
-      "articleId": "1",
-      "userId": "3"
     }
   ],
   "users": [
@@ -107,13 +101,16 @@
       "id": "1",
       "username": "1",
       "password": "1",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://ichef.bbci.co.uk/news/976/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg"
+
     },
     {
       "id": "2",
       "username": "2",
       "password": "2",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://upload.wikimedia.org/wikipedia/ru/thumb/4/4d/Wojak.png/200px-Wojak.png"
     }
   ],
   "profile": {

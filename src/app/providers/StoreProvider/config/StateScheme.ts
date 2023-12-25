@@ -10,6 +10,8 @@ import { AxiosInstance } from 'axios';
 import { To } from 'history';
 import { NavigateOptions } from 'react-router';
 import { articleDetailsScheme } from 'entities/Article';
+import { ArticleDetailsCommentsScheme }
+  from '../../../../pages/ArticleDetailsPage/model/types/ArticleDetailsCommentsScheme';
 
 export interface StateScheme {
     user: UserScheme;
@@ -17,6 +19,7 @@ export interface StateScheme {
     loginForm?: LoginScheme;
     profile?: ProfileScheme;
     articleDetails?: articleDetailsScheme
+    articleDetailsComments?: ArticleDetailsCommentsScheme
 }
 
 export type StateSchemeKey = keyof StateScheme

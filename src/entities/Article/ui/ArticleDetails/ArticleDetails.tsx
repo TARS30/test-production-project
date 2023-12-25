@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import CalendarIcon from 'shared/assets/icons/CalendarIcon.svg';
 import EyeViewsIcon from 'shared/assets/icons/eyeViews.svg';
 import { DynamicModuleLoader, ReducersList }
@@ -14,6 +14,7 @@ import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import {
   Text, TextAlign, TextSize,
 } from 'shared/ui/Text/Text';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading }
   from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
@@ -71,8 +72,6 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         return null;
     }
   }, []);
-
-  console.log(article);
 
   let content;
 
@@ -158,11 +157,9 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     );
   }
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticleById(id));
-    }
-  }, [dispatch, id]);
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id));
+  });
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
