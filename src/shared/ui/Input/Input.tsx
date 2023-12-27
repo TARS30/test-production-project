@@ -35,16 +35,14 @@ export const Input = memo((props: InputProps) => {
   };
 
   return (
-    <div>
-      <input
-        className={classNames(styles.Input, mods, [className])}
-        type={type}
-        value={value}
-        onChange={onChangeHandler}
-        placeholder={placeholder}
-        disabled={disabled}
-        readOnly={readonly}
-      />
-    </div>
+    <input
+      className={classNames(styles.Input, mods, [className])}
+      type={type}
+      value={value}
+      onChange={onChangeHandler}
+      placeholder={placeholder}
+      disabled={disabled}
+      readOnly={readonly}
+    />
   );
 });

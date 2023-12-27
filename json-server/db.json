@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -94,33 +96,52 @@
       "text": "some comment 2",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "some comement 3",
+      "id": "IdnQjM5"
     }
   ],
   "users": [
     {
       "id": "1",
-      "username": "1",
+      "username": "username1",
       "password": "1",
       "role": "ADMIN",
       "avatar": "https://ichef.bbci.co.uk/news/976/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg"
-
     },
     {
       "id": "2",
-      "username": "2",
+      "username": "username2",
       "password": "2",
       "role": "USER",
       "avatar": "https://upload.wikimedia.org/wikipedia/ru/thumb/4/4d/Wojak.png/200px-Wojak.png"
     }
   ],
-  "profile": {
-    "first": "Тимур",
-    "lastname": "Ульби",
-    "age": 1,
-    "currency": "EUR",
-    "country": "Armenia",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://ichef.bbci.co.uk/news/976/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "abobaTEST",
+      "lastname": "second",
+      "age": 54,
+      "currency": "USD",
+      "country": "Armenia",
+      "city": "samara",
+      "username": "admin",
+      "avatar": "https://ichef.bbci.co.uk/news/976/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg"
+    },
+    {
+      "id": "2",
+      "first": "aboba2",
+      "lastname": "second2",
+      "age": 56,
+      "currency": "USD",
+      "country": "Armenia",
+      "city": "samara2",
+      "username": "SUER",
+      "avatar": "https://upload.wikimedia.org/wikipedia/ru/thumb/4/4d/Wojak.png/200px-Wojak.png"
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
@@ -11,11 +11,13 @@ import { DynamicModuleLoader, ReducersList } from
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { AddCommentForm } from 'features/AddCommentForm';
 import styles from './ArticleDetailsPage.module.scss';
 import { articleDetailsCommentsReducer, getArticleComments }
   from '../model/slices/articleDetailsCommentsSlice';
 import { getArticleDetailsCommentsIsLoading } from '../model/selectors/comments/comments';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -34,6 +36,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const comments = useSelector(getArticleComments.selectAll);
 
   const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading);
+
+  const onSendComment = useCallback((text:string) => {
+    dispatch(addCommentForArticle(text));
+  }, [dispatch]);
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -61,6 +67,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
           textSize={TextSize.L}
           text={t('comments')}
         />
+        <AddCommentForm onSendComment={onSendComment} />
         <CommentList
           isLoading={commentsIsLoading}
           comments={comments}

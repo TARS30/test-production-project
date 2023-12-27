@@ -1,0 +1,33 @@
+.AddCommentForm {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  gap: 20px;
+
+  & input {
+    padding: 10px;
+    background: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 3px;
+    outline: none;
+    transition: all 0.1s ease 0s;
+    color: var(--primary-color);
+    flex: 1 1 auto;
+
+    &:focus {
+      border-color: var(--accent-color);
+    }
+  }
+}
+
+.button {
+  padding: 0 30px;
+
+  &:active {
+    border-color: var(--accent-color);
+  }
+}
+
+.loader {
+  margin: 0 auto;
+}
