@@ -42,7 +42,9 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   return (
 
     <div className={classNames(styles.ProfilePageHeader, {}, [className])}>
-      <Text title={t('profile-0')} />
+      {canEdit
+        ? <Text title={`${t('profile-0')} (${t('you')})`} />
+        : <Text title={t('profile-0')} />}
       {canEdit && (
         <div className={styles.btnWrapper}>
           {readonly ? (

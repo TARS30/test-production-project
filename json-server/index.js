@@ -12,7 +12,7 @@ server.use(jsonServer.bodyParser);
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
 server.use(async (req, res, next) => {
   await new Promise((res) => {
-    setTimeout(res, 1000);
+    setTimeout(res, 1500);
   });
   next();
 });
@@ -51,6 +51,6 @@ server.use((req, res, next) => {
 
 server.use(router);
 
-server.listen(9999, () => {
-  console.log('server is running on 9999 port');
+server.listen(5000, () => {
+  console.log('server is running on 5000 port');
 });

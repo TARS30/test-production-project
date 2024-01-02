@@ -1,5 +1,6 @@
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 
+import { memo } from 'react';
 import styles from './Text.module.scss';
 
 export enum TextTheme {
@@ -16,6 +17,7 @@ export enum TextAlign {
 export enum TextSize {
   M = 'size_m',
   L = 'size_l',
+  S = 'size_s',
 }
 
 interface TextProps {
@@ -27,7 +29,7 @@ interface TextProps {
     textSize?: TextSize;
 }
 
-export const Text = (props: TextProps) => {
+export const Text = memo((props: TextProps) => {
   const {
     text,
     title,
@@ -49,4 +51,4 @@ export const Text = (props: TextProps) => {
       {text && <p className={styles.text}>{text}</p>}
     </div>
   );
-};
+});

@@ -13,8 +13,9 @@ import { AxiosInstance } from 'axios';
 import { To } from 'history';
 import { NavigateOptions } from 'react-router';
 import { articleDetailsScheme } from 'entities/Article';
-import { AddCommentFormScheme } from '../../../../features/AddCommentForm/model/types/addCommentForm';
-import { ArticleDetailsCommentsScheme } from '../../../../pages/ArticleDetailsPage/model/types/ArticleDetailsCommentsScheme';
+import { ArticlesPageScheme } from 'pages/ArticlesPage';
+import { AddCommentFormScheme } from 'features/AddCommentForm';
+import { ArticleDetailsCommentsScheme } from 'pages/ArticleDetailsPage';
 
 export interface StateScheme {
     user: UserScheme;
@@ -24,6 +25,7 @@ export interface StateScheme {
     articleDetails?: articleDetailsScheme;
     articleDetailsComments?: ArticleDetailsCommentsScheme;
     addCommentForm?: AddCommentFormScheme;
+    articlesPage?: ArticlesPageScheme;
 }
 
 export type StateSchemeKey = keyof StateScheme
