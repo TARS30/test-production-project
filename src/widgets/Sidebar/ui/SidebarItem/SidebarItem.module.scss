@@ -40,6 +40,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  text-wrap: nowrap;
 
   &:hover .icon {
     fill: var(--accent-color);

@@ -75,6 +75,13 @@
 			"$0",
 		],
 		"description": "Create a Storybook story"
+	},
+	"useEffect": {
+		"prefix": "useeff",
+		"body": [
+			"useEffect(() => {",
+			"\t${1}",
+			"}, []);"
+		]
 	}
-}
 }

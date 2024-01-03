@@ -14,6 +14,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { Button } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import styles from './ArticleDetailsPage.module.scss';
 import { articleDetailsCommentsReducer, getArticleComments }
   from '../model/slices/articleDetailsCommentsSlice';
@@ -56,19 +57,19 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   if (!id) {
     return (
 
-      <div className={classNames(styles.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(styles.ArticleDetailsPage, {}, [className])}>
         <Text
           align={TextAlign.CENTER}
           title={t('occurred-error')}
           text={t('article-wasnt-found')}
         />
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(styles.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(styles.ArticleDetailsPage, {}, [className])}>
         <Button
           onClick={onBack}
         >
@@ -86,7 +87,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
           isLoading={commentsIsLoading}
           comments={comments}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
