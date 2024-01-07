@@ -14,7 +14,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { Button } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import styles from './ArticleDetailsPage.module.scss';
 import { articleDetailsCommentsReducer, getArticleComments }
   from '../model/slices/articleDetailsCommentsSlice';

@@ -5,6 +5,12 @@
   margin-left: auto;
 }
 
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .selected {
   fill: var(--accent-color);
 }

@@ -43,5 +43,16 @@
   "send": "Отправить",
   "you": "Вы",
   "continue-reading": "Продолжить...",
-  "back-to-the-list": "Вернуться к списку"
+  "back-to-the-list": "Вернуться к списку",
+  "sort-by": "Сортировать по",
+  "search": "Поиск...",
+  "ascending": "Возр",
+  "descending": "Убыв",
+  "date-sozdaniya": "Дата создания",
+  "nazvaniyu": "Названию",
+  "chislu-prosmotrov": "Числу просмотров",
+  "economics": "Экономика",
+  "science": "Наука",
+  "all": "Все",
+  "no-articles-found": "Статьи не найдены"
 }

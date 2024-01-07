@@ -1,40 +1,43 @@
-import { CounterScheme } from 'entities/Counter';
-import { UserScheme } from 'entities/User';
-import { LoginScheme } from 'features/AuthByUsername';
 import {
-  Reducer,
   AnyAction,
   EnhancedStore,
+  Reducer,
   ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { CombinedState } from 'redux';
-import { ProfileScheme } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
-import { To } from 'history';
-import { NavigateOptions } from 'react-router';
 import { articleDetailsScheme } from 'entities/Article';
-import { ArticlesPageScheme } from 'pages/ArticlesPage';
+import { CounterScheme } from 'entities/Counter';
+import { ProfileScheme } from 'entities/Profile';
+import { UserScheme } from 'entities/User';
 import { AddCommentFormScheme } from 'features/AddCommentForm';
+import { LoginScheme } from 'features/AuthByUsername';
 import { ArticleDetailsCommentsScheme } from 'pages/ArticleDetailsPage';
+import { ArticlesPageScheme } from 'pages/ArticlesPage';
+import { CombinedState } from 'redux';
+import { ScrollSaverScheme } from 'widgets/Page/ScrollSaver/types/ScrollSaverScheme';
 
 export interface StateScheme {
     user: UserScheme;
     counter: CounterScheme;
     loginForm?: LoginScheme;
     profile?: ProfileScheme;
-    articleDetails?: articleDetailsScheme;
-    articleDetailsComments?: ArticleDetailsCommentsScheme;
-    addCommentForm?: AddCommentFormScheme;
+    scrollSaver: ScrollSaverScheme;
     articlesPage?: ArticlesPageScheme;
+    articleDetails?: articleDetailsScheme;
+    addCommentForm?: AddCommentFormScheme;
+    articleDetailsComments?: ArticleDetailsCommentsScheme;
 }
 
 export type StateSchemeKey = keyof StateScheme
+
+export type MountedReducers = OptionalRecord<StateSchemeKey, boolean>
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateScheme>
     reduce: (state: StateScheme, action: AnyAction) => CombinedState<StateScheme>;
     add:(key: StateSchemeKey, reducer: Reducer) => void;
     remove: (key: StateSchemeKey) => void;
+    getMountedReducers: () => MountedReducers
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateScheme> {
@@ -43,7 +46,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateScheme> {
 
 export interface ThunkExtraArg {
     api: AxiosInstance;
-    navigate?: (to: To, options?: NavigateOptions) => void,
 }
 
 export interface ThunkConfig<T> {

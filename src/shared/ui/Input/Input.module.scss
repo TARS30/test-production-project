@@ -1,6 +1,16 @@
 .Input {
   padding: 3px 5px;
   border-radius: 3px;
+  border: 2px solid var(--secondary-color);
+  transition: all 0.3s ease 0s;
+  outline: none;
+  background-color: var(--input-bg-color);
+  color: var(--primary-color);
+
+  &:focus {
+    border-color: var(--accent-color);
+    background-color: var(--input-bg-hovered-color);
+  }
 
   &:disabled {
     opacity: 0.5;

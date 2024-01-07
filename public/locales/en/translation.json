@@ -43,5 +43,16 @@
   "send": "Send",
   "you": "You",
   "continue-reading": "Continue...",
-  "back-to-the-list": "Back to the list"
+  "back-to-the-list": "Back to the list",
+  "sort-by": "Sort by",
+  "search": "Search...",
+  "ascending": "Asc",
+  "descending": "Desc",
+  "date-sozdaniya": "Creation Date",
+  "nazvaniyu": "Name",
+  "chislu-prosmotrov": "Number of views",
+  "economics": "Economics",
+  "science": "Science",
+  "all": "All",
+  "no-articles-found": "No articles found"
 }

@@ -3,7 +3,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Card } from 'shared/ui/Card/Card';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { Text, TextSize } from 'shared/ui/Text/Text';
-// import { useHover } from 'shared/lib/hooks/useHover/useHover';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -44,14 +43,10 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
 
   const { t } = useTranslation();
 
-  // const [isHovered, bindHover] = useHover();
-  // console.log(isHovered);
-  // if (isLoading && view === ArticleView.SQUARE) {
-
   if (view === ArticleView.SQUARE) {
     return (
       <div
-        // {...(bindHover as object)}
+        onClick={onArticleOpen}
         className={classNames(styles.SQUARE, {}, [className, styles[view]])}
       >
         <Card
@@ -114,14 +109,15 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
             text={article.createdAt}
           />
         </div>
-        <Text
-          textSize={TextSize.L}
-          title={article.title}
+        <button
+          onClick={onArticleOpen}
           className={styles.title}
-        />
+        >
+          {article.title}
+        </button>
         <Text
           text={article.type.join(', ')}
-          className={styles.title}
+          className={styles.subTitle}
         />
         <div className={styles.imageWrapper}>
           <img

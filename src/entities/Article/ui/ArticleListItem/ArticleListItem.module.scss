@@ -33,6 +33,15 @@
 
   .title {
     margin-bottom: 10px;
+    background: none;
+    font-size: 32px;
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+  }
+
+  .subTitle {
+    margin-bottom: 10px;
   }
 
   .createdAt {
@@ -61,6 +70,12 @@
   max-width: 220px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
   .imageWrapper {
     position: relative;
