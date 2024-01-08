@@ -6,7 +6,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 export default {
-  title: 'pages /ArticleDetailsPage',
+  title: 'pages/ArticleDetailsPage',
   component: ArticleDetailsPage,
   args: {},
 } as ComponentMeta<typeof ArticleDetailsPage>;
@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
   <ArticleDetailsPage {...args} />
 );
 
-const data: Article = {
+const article: Article = {
   id: '1',
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
@@ -58,5 +58,5 @@ const data: Article = {
 export const Primary = Template.bind({});
 Primary.args = {};
 Primary.decorators = [StoreDecorator({
-  articleDetails: { data },
+  articleDetails: { data: article },
 })];

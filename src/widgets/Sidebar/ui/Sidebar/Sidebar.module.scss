@@ -1,6 +1,6 @@
 .Sidebar {
   height: calc(100vh - var(--navbar-height));
-  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
   background: var(--inverted-bg-color);
   position: relative;
   transition: all 0.3s ease 0s;
@@ -26,7 +26,7 @@
 
 .collapsed {
   transition: all 0.3s ease 0s;
-  width: var(--sidebar-width-collapsed);
+  min-width: var(--sidebar-width-collapsed);
 
   .items {
     margin-left: 0;
