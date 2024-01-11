@@ -4,6 +4,34 @@
   box-sizing: border-box;
 }
 
+/* width */
+*::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  background: var(--inverted-bg-color);
+  border-radius: 8px;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #da5b00;
+}
+
+/* Handle on click */
+*::-webkit-scrollbar-thumb:active {
+  background: #ff6a00;
+}
+
 input,
 button,
 textarea,

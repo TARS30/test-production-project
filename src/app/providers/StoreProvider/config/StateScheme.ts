@@ -11,10 +11,12 @@ import { ProfileScheme } from 'entities/Profile';
 import { UserScheme } from 'entities/User';
 import { AddCommentFormScheme } from 'features/AddCommentForm';
 import { LoginScheme } from 'features/AuthByUsername';
-import { ArticleDetailsCommentsScheme } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsCommentsScheme, ArticleDetailsPageScheme } from 'pages/ArticleDetailsPage';
 import { ArticlesPageScheme } from 'pages/ArticlesPage';
 import { CombinedState } from 'redux';
 import { ScrollSaverScheme } from 'widgets/Page/ScrollSaver/types/ScrollSaverScheme';
+import { ArticleRecommendationsScheme } from
+  '../../../../pages/ArticleDetailsPage/model/types/ArticleRecommendationsScheme';
 
 export interface StateScheme {
     user: UserScheme;
@@ -25,7 +27,7 @@ export interface StateScheme {
     articlesPage?: ArticlesPageScheme;
     articleDetails?: articleDetailsScheme;
     addCommentForm?: AddCommentFormScheme;
-    articleDetailsComments?: ArticleDetailsCommentsScheme;
+    ArticleDetailsPage?: ArticleDetailsPageScheme;
 }
 
 export type StateSchemeKey = keyof StateScheme

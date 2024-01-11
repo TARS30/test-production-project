@@ -1,33 +1,35 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 
-import { memo, useCallback } from 'react';
-import { ArticleDetails } from 'entities/Article';
-import { useNavigate, useParams } from 'react-router-dom';
-import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
-import { useTranslation } from 'react-i18next';
+import { ArticleDetails, ArticleList, ArticleView } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
-import { DynamicModuleLoader, ReducersList } from
-  'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useSelector } from 'react-redux';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/AddCommentForm';
-import { Button } from 'shared/ui/Button/Button';
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Button } from 'shared/ui/Button/Button';
+import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
 import { Page } from 'widgets/Page/Page';
-import styles from './ArticleDetailsPage.module.scss';
-import { articleDetailsCommentsReducer, getArticleComments }
-  from '../model/slices/articleDetailsCommentsSlice';
 import { getArticleDetailsCommentsIsLoading } from '../model/selectors/comments/comments';
-import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { getArticleRecommendationsIsLoading } from '../model/selectors/recommendations/recommendations';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchArticleRecommendations } from '../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { ArticleDetailsPageReducer } from '../model/slices';
+import { getArticleComments } from '../model/slices/articleDetailsCommentsSlice';
+import { getArticleRecommendations } from '../model/slices/articleDetailsPageRecommendationsSlice';
+import styles from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
   className?: string;
 }
 
 const reducers: ReducersList = {
-  articleDetailsComments: articleDetailsCommentsReducer,
+  ArticleDetailsPage: ArticleDetailsPageReducer,
 };
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
@@ -37,8 +39,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const dispatch = useAppDispatch();
 
   const comments = useSelector(getArticleComments.selectAll);
+  const recommendations = useSelector(getArticleRecommendations.selectAll);
 
   const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading);
+  const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
 
   const navigate = useNavigate();
 
@@ -52,6 +56,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
+    dispatch(fetchArticleRecommendations());
   });
 
   if (!id) {
@@ -66,7 +71,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
       </Page>
     );
   }
-
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(styles.ArticleDetailsPage, {}, [className])}>
@@ -77,6 +81,18 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
         </Button>
         <ArticleDetails id={id} />
+        <Text
+          className={styles.commentsTitle}
+          textSize={TextSize.L}
+          text={t('recommended')}
+        />
+        <ArticleList
+          target="_blank"
+          className={styles.recommendations}
+          articles={recommendations}
+          view={ArticleView.SQUARE}
+          isLoading={recommendationsIsLoading}
+        />
         <Text
           className={styles.commentsTitle}
           textSize={TextSize.L}

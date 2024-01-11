@@ -5,3 +5,12 @@
 .commentsTitle {
   margin-top: 40px;
 }
+
+.recommendations {
+  margin-top: 20px;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scrollbar-color: var(--accent-color) var(--inverted-bg-color);
+  scrollbar-width: thin;
+}
