@@ -11,10 +11,10 @@ server.use(jsonServer.bodyParser);
 
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
 server.use(async (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
   await new Promise((res) => {
     setTimeout(res, 1500);
   });
-  res.header('Access-Control-Allow-Origin', '*');
   next();
 });
 
