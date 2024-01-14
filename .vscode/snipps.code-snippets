@@ -27,7 +27,9 @@
 		"\tclassName?: string;",
 		"}",
 		"",
-		"export const ${TM_FILENAME_BASE} = ({ className }: ${TM_FILENAME_BASE}Props) => {",
+		"export const ${TM_FILENAME_BASE} = (props: ${TM_FILENAME_BASE}Props) => {",
+		"\tconst { className } = props;"
+		"",
 		"\treturn ("
 		"\t\t<div className={classNames(styles.${TM_FILENAME_BASE}, {}, [className])}>",
 		"",

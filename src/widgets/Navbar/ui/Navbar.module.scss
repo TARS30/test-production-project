@@ -18,3 +18,23 @@
     background: var(--hovered-bg-color);
   }
 }
+
+.leftSide {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.createLink {
+  color: var(--primary-color);
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+  }
+}

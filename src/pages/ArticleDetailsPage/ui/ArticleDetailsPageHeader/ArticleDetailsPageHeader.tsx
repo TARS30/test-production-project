@@ -1,0 +1,55 @@
+import { classNames } from 'shared/lib/classNames/classNames';
+
+import { getArticleDetailsData } from 'entities/Article';
+import { getCanEditArticle } from 'pages/ArticleDetailsPage/model/selectors/article/article';
+import { useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { Button } from 'shared/ui/Button/Button';
+import styles from './ArticleDetailsPageHeader.module.scss';
+
+interface ArticleDetailsPageHeaderProps {
+    className?: string;
+}
+
+export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) => {
+  const {
+    className,
+  } = props;
+  const { t } = useTranslation();
+
+  const article = useSelector(getArticleDetailsData);
+
+  const canEdit = useSelector(getCanEditArticle);
+
+  const navigate = useNavigate();
+
+  const onBack = useCallback(() => {
+    navigate(RoutePath.articles);
+  }, [navigate]);
+
+  const onEditArticle = useCallback(() => {
+    navigate(`${RoutePath.article_details}${article?.id}/edit`);
+  }, [article?.id, navigate]);
+
+  return (
+    <div className={classNames(styles.ArticleDetailsPageHeader, {}, [className])}>
+      <Button
+        onClick={onBack}
+      >
+        {t('back-to-the-list')}
+      </Button>
+      {canEdit && (
+        <Button
+          onClick={onEditArticle}
+          className={styles.editBtn}
+        >
+            {t('edit')}
+        </Button>
+      )}
+    </div>
+  );
+};
