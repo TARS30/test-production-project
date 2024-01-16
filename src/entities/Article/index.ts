@@ -1,9 +1,9 @@
-export { ArticleView } from './model/types/article';
+export { ArticleView, ArticleType } from './model/types/article';
 
 export type {
   Article,
   // ArticleView,
-  ArticleType,
+  // ArticleType,
   ArticleSortField,
 } from './model/types/article';
 export type { articleDetailsScheme } from './model/types/articleDetailsScheme';
