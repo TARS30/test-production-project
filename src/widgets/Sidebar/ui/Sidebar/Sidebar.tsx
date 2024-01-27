@@ -5,8 +5,8 @@ import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
 import { useTranslation } from 'react-i18next';
-import { getSidebarItems } from 'widgets/Sidebar/model/selectors/getSidebarItems';
 import { useSelector } from 'react-redux';
+import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import styles from './Sidebar.module.scss';
 

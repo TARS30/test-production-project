@@ -1,8 +1,10 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 
-import { Text } from 'shared/ui/Text/Text';
-import { useTranslation } from 'react-i18next';
 import { HTMLAttributeAnchorTarget } from 'react';
+import { useTranslation } from 'react-i18next';
+import { List, ListRowProps, WindowScroller } from 'react-virtualized';
+import { Text } from 'shared/ui/Text/Text';
+import { PAGE_ID } from 'widgets/Page/Page';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
@@ -36,29 +38,85 @@ export const ArticleList = (props: ArticleListProps) => {
 
   const { t } = useTranslation();
 
-  const renderArticle = (article: Article) => (
-    <ArticleListItem
-      article={article}
-      view={view}
-      key={article.id}
-      target={target}
-    />
-  );
+  const isWide = view === ArticleView.WIDE;
+
+  const itemsPerRow = isWide ? 1 : 3;
+
+  const rowCount = isWide ? articles.length : Math.ceil(articles.length / itemsPerRow);
+
+  const rowRender = ({
+    index, isScrolling, key, style,
+  }: ListRowProps) => {
+    const items = [];
+    const fromIndex = index * itemsPerRow;
+    const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
+
+    for (let i = fromIndex; i < toIndex; i += 1) {
+      items.push(
+        <ArticleListItem
+          className={styles.card}
+          article={articles[index]}
+          view={view}
+          target={target}
+          key={i}
+        />,
+      );
+    }
+
+    return (
+      <div
+        key={key}
+        style={style}
+        className={styles.row}
+      >
+        {items}
+      </div>
+    );
+  };
 
   if (!isLoading && !articles.length) {
     return (
-      <div className={classNames(styles.ArticleList, {}, [className])}>
+      <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
         <Text title={t('no-articles-found')} />
       </div>
     );
   }
 
   return (
-    <div className={classNames(styles.ArticleList, {}, [className])}>
-      {articles.length > 0
-        ? articles.map(renderArticle)
-        : null}
-      {isLoading && getSkeletons(view)}
-    </div>
+    <WindowScroller
+      scrollElement={document.getElementById(PAGE_ID) as Element}
+    >
+      {({
+        height,
+        width,
+        registerChild,
+        onChildScroll,
+        isScrolling,
+        scrollTop,
+      }) => (
+        <div
+          ref={registerChild}
+          className={classNames(styles.ArticleList, {}, [className, styles[view]])}
+        >
+          <List
+            height={height ?? 710}
+            width={width ? width - 80 : 700}
+            rowCount={rowCount}
+            rowHeight={isWide ? 700 : 340}
+            rowRenderer={rowRender}
+            autoHeight
+            onScroll={onChildScroll}
+            isScrolling={isScrolling}
+            scrollTop={scrollTop}
+          />
+          {isLoading && getSkeletons(view)}
+
+        </div>
+
+      )}
+    </WindowScroller>
+  //   {articles.length > 0
+  //     ? articles.map(renderArticle)
+  //     : null}
   );
 };

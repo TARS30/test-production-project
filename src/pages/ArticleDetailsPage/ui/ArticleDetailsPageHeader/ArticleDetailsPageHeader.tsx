@@ -1,7 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { getArticleDetailsData } from 'entities/Article';
-import { getCanEditArticle } from 'pages/ArticleDetailsPage/model/selectors/article/article';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -9,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Button } from 'shared/ui/Button/Button';
+import { getCanEditArticle } from '../../model/selectors/article/article';
 import styles from './ArticleDetailsPageHeader.module.scss';
 
 interface ArticleDetailsPageHeaderProps {

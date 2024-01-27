@@ -8,7 +8,6 @@ import {
   ArticleViewSelector,
 } from 'entities/Article';
 import { ArticleType } from 'entities/Article/model/types/article';
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import {
   memo, useCallback,
 } from 'react';
@@ -19,6 +18,7 @@ import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { SortOrder } from 'shared/types';
 import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {
   getArticlesPageOrder,
   getArticlesPageSearch,

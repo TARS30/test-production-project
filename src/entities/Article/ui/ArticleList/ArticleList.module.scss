@@ -1,6 +1,21 @@
-.ArticleList {
+.WIDE {
+  .card {
+    margin-bottom: 30px;
+  }
+}
+
+.SQUARE {
   display: flex;
-  gap: 40px;
-  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 40px;
+
+  .card {
+    display: inline-flex;
+    height: 300px;
+  }
+
+  .row {
+    display: flex;
+    gap: 40px;
+  }
 }
