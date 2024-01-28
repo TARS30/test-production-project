@@ -2,19 +2,10 @@
   border: 1px solid var(--primary-color);
   border-radius: 3px;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 .isLoading {
   border: none;
-}
-
-.userHeader {
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
 .username {

@@ -1,28 +1,17 @@
 .navbar {
-  width: 100%;
   height: var(--navbar-height);
   background: var(--navbar-bg-color);
-  display: flex;
-  align-items: center;
   padding: 20px;
 }
 
 .links {
   margin-left: auto;
-  display: flex;
-  gap: 15px;
 }
 
 .btn {
   &:hover {
     background: var(--hovered-bg-color);
   }
-}
-
-.leftSide {
-  display: flex;
-  gap: 20px;
-  align-items: center;
 }
 
 .logo {

@@ -1,13 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-
 import { memo } from 'react';
-import { Text } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { CommentItem } from '../CommentItem/CommentItem';
+import { VStack } from 'shared/ui/Stack';
+import { Text } from 'shared/ui/Text/Text';
 import { Comment } from '../../model/types/comment';
-
-import styles from './CommentList.module.scss';
+import { CommentItem } from '../CommentItem/CommentItem';
 
 interface CommentListProps {
     className?: string;
@@ -20,11 +16,14 @@ export const CommentList = memo(({ className, isLoading, comments }: CommentList
 
   if (isLoading) {
     return (
-      <div className={classNames(styles.CommentList, {}, [className])}>
+      <VStack
+        wide
+        gap="16"
+      >
         <CommentItem isLoading />
         <CommentItem isLoading />
         <CommentItem isLoading />
-      </div>
+      </VStack>
     );
   }
 
@@ -33,7 +32,10 @@ export const CommentList = memo(({ className, isLoading, comments }: CommentList
   }
 
   return (
-    <div className={classNames(styles.CommentList, {}, [className])}>
+    <VStack
+      gap="16"
+      wide
+    >
       {comments?.length
         ? comments.map((comment) => (
           <CommentItem
@@ -43,6 +45,6 @@ export const CommentList = memo(({ className, isLoading, comments }: CommentList
           />
         ))
         : <Text text={t('no-comments-yet')} />}
-    </div>
+    </VStack>
   );
 });

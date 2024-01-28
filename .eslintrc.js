@@ -35,7 +35,7 @@ module.exports = {
     'no-unused-vars': 'off',
     'react/require-default-props': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-props-no-spreading': 'warn',
+    'react/jsx-props-no-spreading': 'off',
     'react/function-component-definition': 'off',
     'no-shadow': 'off',
     'import/extensions': 'off',
@@ -45,7 +45,16 @@ module.exports = {
     'react/button-has-type': 0,
     'i18next/no-literal-string': ['warn', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to', 'target'],
+      ignoreAttribute: [
+        'data-testid',
+        'to',
+        'target',
+        'direction',
+        'align',
+        'justify',
+        'gap',
+        'alt',
+      ],
     }],
     'max-len': ['error', {
       ignoreComments: true,

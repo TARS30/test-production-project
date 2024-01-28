@@ -9,6 +9,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
+import { HStack } from 'shared/ui/Stack';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -35,8 +36,13 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <div className={classNames(styles.navbar, {}, [className, theme])}>
-        <div className={styles.leftSide}>
+      <HStack
+        wide
+        align="center"
+        className={classNames(styles.navbar, {}, [className, theme])}
+      >
+
+        <HStack gap="16">
           <Text
             className={styles.logo}
             title={t('aboba')}
@@ -47,8 +53,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           >
             {t('create-article')}
           </AppLink>
-        </div>
-        <div className={styles.links}>
+        </HStack>
+        <HStack className={styles.links}>
           <Button
             theme={ButtonTheme.BACKGROUND_INVERTED}
             onClick={onLogout}
@@ -57,16 +63,16 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             {t('logout')}
 
           </Button>
-        </div>
-      </div>
+        </HStack>
+      </HStack>
     );
   }
 
   return (
-    <div className={classNames(styles.navbar, {}, [className, theme])}>
+    <HStack className={classNames(styles.navbar, {}, [className, theme])}>
       <Text className={styles.logo} title={t('aboba')} />
 
-      <div className={styles.links}>
+      <HStack className={styles.links}>
         <Button
           theme={ButtonTheme.BACKGROUND_INVERTED}
           onClick={onShowModal}
@@ -82,7 +88,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         />
         )}
 
-      </div>
-    </div>
+      </HStack>
+    </HStack>
   );
 });

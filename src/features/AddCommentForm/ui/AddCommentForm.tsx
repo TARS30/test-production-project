@@ -9,6 +9,7 @@ import { Button } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { HStack } from 'shared/ui/Stack';
 import {
   getAddCommentFormError,
   getAddCommentFormIsLoading,
@@ -54,15 +55,23 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
 
   if (error) {
     return (
-      <div className={classNames(styles.AddCommentForm, {}, [className])}>
+      <HStack
+        align="center"
+        justify="center"
+        className={classNames(styles.AddCommentForm, {}, [className])}
+      >
         <Text title={t('error-occured')} text={error} theme={TextTheme.ERROR} />
-      </div>
+      </HStack>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(styles.AddCommentForm, {}, [className])}>
+      <HStack
+        gap="16"
+        justify="spaceBetween"
+        className={classNames(styles.AddCommentForm, {}, [className])}
+      >
         <Input
           type="text"
           value={text}
@@ -76,7 +85,7 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
           {t('send')}
 
         </Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   );
 };

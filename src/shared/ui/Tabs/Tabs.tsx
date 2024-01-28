@@ -3,6 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { ReactNode, useCallback } from 'react';
 import styles from './Tabs.module.scss';
 import { Card, CardTheme } from '../Card/Card';
+import { HStack } from '../Stack/HStack/HStack';
 
 export interface TabItem {
     value: string;
@@ -29,7 +30,10 @@ export const Tabs = (props: TabsProps) => {
   }, [onTabClick]);
 
   return (
-    <div className={classNames(styles.Tabs, {}, [className])}>
+    <HStack
+      gap="8"
+      className={classNames(styles.Tabs, {}, [className])}
+    >
       {tabs.map((tab) => (
         <Card
           theme={tab.value === value
@@ -42,6 +46,6 @@ export const Tabs = (props: TabsProps) => {
           {tab.content}
         </Card>
       ))}
-    </div>
+    </HStack>
   );
 };

@@ -1,5 +1,3 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-
 import {
   getProfileData, getProfileReadOnly, profileActions, updateProfileData,
 } from 'entities/Profile';
@@ -9,8 +7,8 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
-import styles from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -41,22 +39,26 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
 
   return (
 
-    <div className={classNames(styles.ProfilePageHeader, {}, [className])}>
+    <HStack
+      wide
+      gap="8"
+      align="center"
+      justify="spaceBetween"
+    >
       {canEdit
         ? <Text title={`${t('profile-0')} (${t('you')})`} />
         : <Text title={t('profile-0')} />}
       {canEdit && (
-        <div className={styles.btnWrapper}>
+        <div>
           {readonly ? (
             <Button
-              className={styles.editBtn}
               theme={ButtonTheme.OUTLINE}
               onClick={onEdit}
             >
               {t('edit')}
             </Button>
           ) : (
-            <div className={styles.headerButtons}>
+            <>
               <Button
                 theme={ButtonTheme.OUTLINE_ACCENT}
                 onClick={onCloseEdit}
@@ -64,17 +66,16 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                 {t('cancel')}
               </Button>
               <Button
-                className={styles.saveBtn}
                 theme={ButtonTheme.OUTLINE}
                 onClick={onSaveEdit}
               >
                 {t('save')}
               </Button>
-            </div>
+            </>
           ) }
         </div>
       )}
 
-    </div>
+    </HStack>
   );
 };

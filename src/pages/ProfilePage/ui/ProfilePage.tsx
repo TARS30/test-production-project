@@ -2,25 +2,24 @@ import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import {
   ProfileCard,
+  fetchProfileData,
+  getProfileError,
+  getProfileForm,
+  getProfileIsLoading,
+  getProfileReadOnly,
+  getProfileValidateErrors,
   profileActions,
   profileReducer,
-  getProfileForm,
-  getProfileError,
-  fetchProfileData,
-  getProfileReadOnly,
-  getProfileIsLoading,
-  getProfileValidateErrors,
 } from 'entities/Profile';
-import { useCallback, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from
-  'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from 'shared/ui/Stack';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { Page } from 'widgets/Page/Page';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -85,30 +84,36 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <Page className={classNames('', {}, [className])}>
-        <ProfilePageHeader />
-        {validateErrors?.length && validateErrors.map((error) => (
-          <Text
-            key={error}
-            text={error}
-            theme={TextTheme.ERROR}
-            title={t('error-occured')}
+      <Page>
+        <VStack
+          wide
+          gap="16"
+          justify="spaceBetween"
+        >
+          <ProfilePageHeader />
+          {validateErrors?.length && validateErrors.map((error) => (
+            <Text
+              key={error}
+              text={error}
+              theme={TextTheme.ERROR}
+              title={t('error-occured')}
+            />
+          ))}
+          <ProfileCard
+            error={error}
+            data={formData}
+            readonly={readonly}
+            isLoading={isLoading}
+            onChangeAge={onChangeAge}
+            onChangeCity={onChangeCity}
+            onChangeAvatar={onChangeAvatar}
+            onChangeCountry={onChangeCountry}
+            onChangeLastName={onChangeLastName}
+            onChangeUserName={onChangeUserName}
+            onChangeCurrency={onChangeCurrency}
+            onChangeFirstName={onChangeFirstName}
           />
-        ))}
-        <ProfileCard
-          error={error}
-          data={formData}
-          readonly={readonly}
-          isLoading={isLoading}
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeAvatar={onChangeAvatar}
-          onChangeCountry={onChangeCountry}
-          onChangeLastName={onChangeLastName}
-          onChangeUserName={onChangeUserName}
-          onChangeCurrency={onChangeCurrency}
-          onChangeFirstName={onChangeFirstName}
-        />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

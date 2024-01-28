@@ -6,6 +6,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Text } from 'shared/ui/Text/Text';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Comment } from '../../model/types/comment';
 import styles from './CommentItem.module.scss';
 
@@ -36,8 +37,15 @@ export const CommentItem = memo((props: CommentItemProps) => {
   }
 
   return (
-    <div className={classNames(styles.CommentItem, {}, [className])}>
-      <div className={styles.userHeader}>
+    <VStack
+      wide
+      gap="16"
+      className={classNames(styles.CommentItem, {}, [className])}
+    >
+      <HStack
+        wide
+        gap="16"
+      >
         <AppLink to={RoutePath.profile + comment.user.id}>
           {comment.user.avatar
             ? <Avatar size={30} src={comment.user.avatar} alt={comment.user.username} />
@@ -50,8 +58,8 @@ export const CommentItem = memo((props: CommentItemProps) => {
           />
         </AppLink>
 
-      </div>
+      </HStack>
       <Text text={comment.text} />
-    </div>
+    </VStack>
   );
 });

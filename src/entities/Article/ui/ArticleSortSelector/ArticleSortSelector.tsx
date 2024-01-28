@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useCallback, useMemo } from 'react';
 // import { ArticleSortField } from 'entities/Article/model/types/article';
 import { SortOrder } from 'shared/types';
+import { HStack } from 'shared/ui/Stack';
 import { ArticleSortField } from '../../model/types/article';
 import styles from './ArticleSortSelector.module.scss';
 
@@ -54,7 +55,7 @@ export const ArticleSortSelector = (props: ArticleSortSelectorProps) => {
   ], [t]);
 
   return (
-    <div className={classNames(styles.ArticleSortSelector, {}, [className])}>
+    <HStack gap="8" className={classNames(styles.ArticleSortSelector, {}, [className])}>
       <Select<ArticleSortField>
         value={sort}
         onChange={onChangeSort}
@@ -66,6 +67,6 @@ export const ArticleSortSelector = (props: ArticleSortSelectorProps) => {
         onChange={onChangeOrder}
         options={orderOptions}
       />
-    </div>
+    </HStack>
   );
 };

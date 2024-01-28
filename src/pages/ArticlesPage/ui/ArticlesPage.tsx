@@ -1,14 +1,14 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-
 import { ArticleList } from 'entities/Article';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+
 import { ErrorPage } from 'widgets/ErrorPage';
 import { Page } from 'widgets/Page/Page';
-import { useSearchParams } from 'react-router-dom';
+import { VStack } from 'shared/ui/Stack';
 import {
   getArticlesPageError,
   getArticlesPageIsLoading,
@@ -17,7 +17,6 @@ import {
 import { fetchNextArticlePage } from '../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
 import { articlePageReducer, getArticles } from '../model/slices/articlesPageSlice';
-import styles from './ArticlesPage.module.scss';
 import { ArticlesPageFilters } from './ArticlesPageFilters/ArticlesPageFilters';
 
 interface ArticlesPageProps {
@@ -54,16 +53,18 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={onLoadNextPage}>
-        <div className={styles.header}>
-          <ArticlesPageFilters />
-        </div>
-        <div className={classNames(styles.ArticlesPage, {}, [className])}>
-          <ArticleList
-            view={view}
-            articles={articles}
-            isLoading={isLoading}
-          />
-        </div>
+        <VStack gap="32">
+          <VStack wide gap="16">
+            <ArticlesPageFilters />
+          </VStack>
+          <div>
+            <ArticleList
+              view={view}
+              articles={articles}
+              isLoading={isLoading}
+            />
+          </div>
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

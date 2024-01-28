@@ -6,6 +6,7 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { VStack } from 'shared/ui/Stack';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import styles from './Sidebar.module.scss';
@@ -48,9 +49,14 @@ export const Sidebar = ({ className }: SidebarProps) => {
       >
         {collapsed ? '>' : '<'}
       </Button>
-      <div className={styles.items}>
+      <VStack
+        align="start"
+        justify="start"
+        gap="32"
+        className={styles.items}
+      >
         {itemsList}
-      </div>
+      </VStack>
       <div className={styles.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={styles.lang} />

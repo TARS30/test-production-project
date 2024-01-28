@@ -1,8 +1,5 @@
 .AddCommentForm {
-  display: flex;
-  justify-content: space-between;
   padding: 20px 0;
-  gap: 20px;
 
   & input {
     padding: 10px;
@@ -21,7 +18,8 @@
 }
 
 .button {
-  padding: 0 30px;
+  padding: 10px 30px;
+  height: 100%;
 
   &:active {
     border-color: var(--accent-color);
