@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { USER_COUNTER_KEY } from 'shared/const/localStorage';
 import { CounterScheme } from '../types/counterScheme';
 
 const initialState: CounterScheme = {
@@ -11,9 +12,11 @@ export const counterSlice = createSlice({
   reducers: {
     increment: (state) => {
       state.value += 1;
+      localStorage.setItem(USER_COUNTER_KEY, `${state.value}`);
     },
     decrement: (state) => {
       state.value -= 1;
+      localStorage.setItem(USER_COUNTER_KEY, `${state.value}`);
     },
 
   },

@@ -1,6 +1,5 @@
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 
-import { memo } from 'react';
 import styles from './Icon.module.scss';
 
 interface IconProps {
@@ -8,7 +7,7 @@ interface IconProps {
     Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
 }
 
-export const Icon = memo((props: IconProps) => {
+export const Icon = (props: IconProps) => {
   const {
     Svg,
     className,
@@ -18,4 +17,4 @@ export const Icon = memo((props: IconProps) => {
 
     <Svg className={classNames(styles.Icon, {}, [className])} />
   );
-});
+};

@@ -1,6 +1,7 @@
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 
-import { ChangeEvent, memo, useMemo } from 'react';
+import { ChangeEvent, useMemo } from 'react';
+import { HStack } from '../Stack';
 import styles from './Select.module.scss';
 
 export interface SelectOption<T extends string> {
@@ -44,7 +45,7 @@ export const Select = <T extends string>({
   };
 
   return (
-    <div className={classNames(styles.Select, mods, [className])}>
+    <HStack gap="4">
       {label && (
       <span className={styles.label}>
         {label}
@@ -57,6 +58,6 @@ export const Select = <T extends string>({
       >
         {optionsList}
       </select>
-    </div>
+    </HStack>
   );
 };

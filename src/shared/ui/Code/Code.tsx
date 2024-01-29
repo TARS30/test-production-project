@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 
-import { useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import CopyIcon from 'shared/assets/icons/CopyIcon.svg';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from '../Button/Button';
@@ -11,10 +11,11 @@ interface CodeProps {
     text: string;
 }
 
-export const Code = ({ className, text }: CodeProps) => {
+export const Code = memo(({ className, text }: CodeProps) => {
   const { t } = useTranslation();
   const onCopy = useCallback(() => {
     navigator.clipboard.writeText(text);
+    // eslint-disable-next-line no-alert
     alert(t('copied'));
   }, [t, text]);
 
@@ -28,4 +29,4 @@ export const Code = ({ className, text }: CodeProps) => {
       </code>
     </pre>
   );
-};
+});

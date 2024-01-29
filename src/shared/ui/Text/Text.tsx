@@ -6,7 +6,8 @@ import styles from './Text.module.scss';
 export enum TextTheme {
   PRIMARY = 'primary',
   INVERTED = 'inverted',
-  ERROR = 'error'
+  ERROR = 'error',
+  CORRECT = 'correct',
 }
 
 export enum TextAlign {
@@ -30,6 +31,14 @@ interface TextProps {
     textSize?: TextSize;
 }
 
+type HeaderTagType = 'h1' | 'h2' | 'h3';
+
+const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+  [TextSize.S]: 'h3',
+  [TextSize.M]: 'h2',
+  [TextSize.L]: 'h1',
+};
+
 export const Text = memo((props: TextProps) => {
   const {
     text,
@@ -40,6 +49,8 @@ export const Text = memo((props: TextProps) => {
     textSize = TextSize.M,
   } = props;
 
+  const HeaderTag = mapSizeToHeaderTag[textSize];
+
   const mods: Mods = {
     [styles[theme]]: true,
     [styles[align]]: true,
@@ -48,7 +59,7 @@ export const Text = memo((props: TextProps) => {
 
   return (
     <div className={classNames(styles.Text, mods, [className])}>
-      {title && <p className={styles.title}>{title}</p>}
+      {title && <HeaderTag className={styles.title}>{title}</HeaderTag>}
       {text && <p className={styles.text}>{text}</p>}
     </div>
   );

@@ -115,8 +115,5 @@ export const ArticleList = (props: ArticleListProps) => {
 
       )}
     </WindowScroller>
-  //   {articles.length > 0
-  //     ? articles.map(renderArticle)
-  //     : null}
   );
 };

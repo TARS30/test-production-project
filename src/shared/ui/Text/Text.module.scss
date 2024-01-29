@@ -18,6 +18,12 @@
   }
 }
 
+.correct {
+  .text {
+    color: green;
+  }
+}
+
 .inverted {
   .title {
     color: var(--inverted-primary-color);

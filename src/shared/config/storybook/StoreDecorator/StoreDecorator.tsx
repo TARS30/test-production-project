@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 import { StateScheme, StoreProvider } from 'app/providers/StoreProvider';
 import { articleDetailsReducer } from 'entities/Article/model/slices/articleDetailsSlice';
+import { counterReducer } from 'entities/Counter';
 import { profileReducer } from 'entities/Profile';
 import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentFormSlice';
 import { loginReducer } from 'features/AuthByUsername';
@@ -13,6 +14,7 @@ const defaultAsyncReducers: ReducersList = {
   articleDetails: articleDetailsReducer,
   addCommentForm: addCommentFormReducer,
   ArticleDetailsPage: ArticleDetailsPageReducer,
+  counter: counterReducer,
 };
 
 export const StoreDecorator = (

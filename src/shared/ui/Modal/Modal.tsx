@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 
 import { useTheme } from 'app/providers/ThemeProvider';

@@ -7,14 +7,17 @@ export const HStack = (props: HStackProps) => {
     children,
     justify,
     align,
+    role,
     wide,
   } = props;
+
   return (
     <Flex
       direction="row"
       align={align}
       justify={justify}
       wide={wide}
+      role={role}
       {...props}
     >
       {children}

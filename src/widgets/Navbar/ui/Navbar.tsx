@@ -8,7 +8,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 import { HStack } from 'shared/ui/Stack';
 import styles from './Navbar.module.scss';
 
@@ -37,6 +37,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <HStack
+        role="banner"
         wide
         align="center"
         className={classNames(styles.navbar, {}, [className, theme])}
@@ -44,6 +45,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
         <HStack gap="16">
           <Text
+            textSize={TextSize.L}
             className={styles.logo}
             title={t('aboba')}
           />
@@ -69,8 +71,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
 
   return (
-    <HStack className={classNames(styles.navbar, {}, [className, theme])}>
-      <Text className={styles.logo} title={t('aboba')} />
+    <HStack role="banner" className={classNames(styles.navbar, {}, [className, theme])}>
+      <Text textSize={TextSize.L} className={styles.logo} title={t('aboba')} />
 
       <HStack className={styles.links}>
         <Button

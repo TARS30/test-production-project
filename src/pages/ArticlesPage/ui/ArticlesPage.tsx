@@ -57,13 +57,11 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
           <VStack wide gap="16">
             <ArticlesPageFilters />
           </VStack>
-          <div>
-            <ArticleList
-              view={view}
-              articles={articles}
-              isLoading={isLoading}
-            />
-          </div>
+          <ArticleList
+            view={view}
+            articles={articles}
+            isLoading={isLoading}
+          />
         </VStack>
       </Page>
     </DynamicModuleLoader>

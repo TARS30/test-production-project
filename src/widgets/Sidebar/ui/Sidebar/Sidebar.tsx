@@ -33,7 +33,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
   )), [collapsed, sidebarItems]);
 
   return (
-    <div
+    <aside
       data-testid="sidebar"
       className={classNames(styles.Sidebar, { [styles.collapsed]: collapsed }, [
         className,
@@ -54,6 +54,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         justify="start"
         gap="32"
         className={styles.items}
+        role="navigation"
       >
         {itemsList}
       </VStack>
@@ -61,6 +62,6 @@ export const Sidebar = ({ className }: SidebarProps) => {
         <ThemeSwitcher />
         <LangSwitcher className={styles.lang} />
       </div>
-    </div>
+    </aside>
   );
 };

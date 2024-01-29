@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Button } from 'shared/ui/Button/Button';
 import { getCanEditArticle } from '../../model/selectors/article/article';
 import styles from './ArticleDetailsPageHeader.module.scss';
@@ -36,7 +35,7 @@ export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) =
   }, [article?.id, navigate]);
 
   return (
-    <div className={classNames(styles.ArticleDetailsPageHeader, {}, [className])}>
+    <header className={classNames(styles.ArticleDetailsPageHeader, {}, [className])}>
       <Button
         onClick={onBack}
       >
@@ -50,6 +49,6 @@ export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) =
             {t('edit')}
         </Button>
       )}
-    </div>
+    </header>
   );
 };

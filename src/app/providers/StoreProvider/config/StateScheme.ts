@@ -28,6 +28,7 @@ export interface StateScheme {
     articleDetails?: articleDetailsScheme;
     addCommentForm?: AddCommentFormScheme;
     ArticleDetailsPage?: ArticleDetailsPageScheme;
+
 }
 
 export type StateSchemeKey = keyof StateScheme

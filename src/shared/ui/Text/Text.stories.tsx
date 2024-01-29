@@ -18,11 +18,17 @@ Primary.args = {
   title: 'Title of component "Text"',
   text: 'Some text of "Text" component',
 };
-export const PrimaryLarge = Template.bind({});
-PrimaryLarge.args = {
+export const Large = Template.bind({});
+Large.args = {
   title: 'Title of component "Text"',
   text: 'Some text of "Text" component',
   textSize: TextSize.L,
+};
+export const Small = Template.bind({});
+Small.args = {
+  title: 'Title of component "Text"',
+  text: 'Some text of "Text" component',
+  textSize: TextSize.S,
 };
 
 export const Dark = Template.bind({});

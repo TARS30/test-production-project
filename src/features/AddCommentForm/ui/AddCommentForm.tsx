@@ -75,7 +75,7 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
         <Input
           type="text"
           value={text}
-          placeholder="Type comment"
+          placeholder={t('type-comment')}
           onChange={onCommentTextChange}
         />
         <Button
