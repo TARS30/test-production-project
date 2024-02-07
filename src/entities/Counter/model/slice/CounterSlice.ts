@@ -18,6 +18,10 @@ export const counterSlice = createSlice({
       state.value -= 1;
       localStorage.setItem(USER_COUNTER_KEY, `${state.value}`);
     },
+    reset: (state) => {
+      state.value = 0;
+      localStorage.setItem(USER_COUNTER_KEY, `${state.value}`);
+    },
 
   },
 });

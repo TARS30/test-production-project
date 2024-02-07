@@ -21,11 +21,15 @@ export const Counter = () => {
   const decrement = () => {
     dispatch(counterActions.decrement());
   };
+  const reset = () => {
+    dispatch(counterActions.reset());
+  };
 
   const counterLessZero = counterValue <= -1;
   const counterLessMinusTwo = counterValue < -2;
   const counterLessMinusFive = counterValue < -5;
   const counterMoreThanOne = counterValue > 0;
+  const counterIsZero = counterValue === 0;
 
   const isVisible = counterMoreThanOne || !counterLessMinusFive;
 
@@ -43,9 +47,14 @@ export const Counter = () => {
               text="ОТАК НОМАЛЬНА"
             />
             )}
+            {counterIsZero && <Text text="ZERO" />}
           </>
         ) : (
-          <Text text="Ф - ФСЁ. А ХУЛЬ ТЫ ДУМАЛ?" />
+          <>
+            <Text text="Ф - ФСЁ. А ХУЛЬ ТЫ ДУМАЛ?" />
+            <Button onClick={reset}>reset button</Button>
+          </>
+
         )}
       {counterLessZero && !counterLessMinusTwo && !counterLessMinusFive
       && (
@@ -57,7 +66,6 @@ export const Counter = () => {
 
       {counterLessMinusTwo && !counterLessMinusFive
         && <Text text="Э НАХОЙ, Я ПОСЛЕ ПЯТИ СЪЁБУЮ" theme={TextTheme.ERROR} />}
-
     </div>
   );
 };

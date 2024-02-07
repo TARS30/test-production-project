@@ -46,6 +46,7 @@ module.exports = {
     'i18next/no-literal-string': ['warn', {
       markupOnly: true,
       ignoreAttribute: [
+        'as',
         'to',
         'alt',
         'gap',

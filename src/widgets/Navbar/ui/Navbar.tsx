@@ -10,6 +10,8 @@ import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { HStack } from 'shared/ui/Stack';
+import { MyDropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -57,14 +59,31 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           </AppLink>
         </HStack>
         <HStack className={styles.links}>
-          <Button
+          <MyDropdown
+            className={styles.dropdown}
+            items={[
+              {
+                content: t('logout'),
+                onClick: onLogout,
+              },
+            ]}
+            trigger={(
+              <Avatar
+                alt="avatar"
+                size={30}
+                src={authData.avatar}
+              />
+            )}
+            direction="bottom left"
+          />
+          {/* <Button
             theme={ButtonTheme.BACKGROUND_INVERTED}
             onClick={onLogout}
             className={styles.btn}
           >
             {t('logout')}
 
-          </Button>
+          </Button> */}
         </HStack>
       </HStack>
     );

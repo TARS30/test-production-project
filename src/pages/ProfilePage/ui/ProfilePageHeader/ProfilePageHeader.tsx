@@ -58,7 +58,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
               {t('edit')}
             </Button>
           ) : (
-            <>
+            <HStack gap="8">
               <Button
                 theme={ButtonTheme.OUTLINE_ACCENT}
                 onClick={onCloseEdit}
@@ -71,7 +71,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
               >
                 {t('save')}
               </Button>
-            </>
+            </HStack>
           ) }
         </div>
       )}
