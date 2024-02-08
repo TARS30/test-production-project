@@ -63,6 +63,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             className={styles.dropdown}
             items={[
               {
+                id: '1',
                 content: t('logout'),
                 onClick: onLogout,
               },

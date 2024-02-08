@@ -10,7 +10,7 @@ export default {
   globals: {
     __IS_DEV__: true,
     __API__: '',
-    __PROJECT: 'jest',
+    __PROJECT__: 'jest',
   },
   clearMocks: true,
   testEnvironment: 'jsdom',
@@ -36,7 +36,7 @@ export default {
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
   rootDir: '../../',
-  setupFilesAfterEnv: ['<rootDir>config/jest/jestSetup.ts'],
+  setupFilesAfterEnv: ['@testing-library/jest-dom', '<rootDir>config/jest/jestSetup.ts'],
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),

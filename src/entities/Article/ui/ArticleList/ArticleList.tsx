@@ -16,6 +16,7 @@ interface ArticleListProps {
     isLoading?: boolean;
     view?: ArticleView;
     target?: HTMLAttributeAnchorTarget;
+    virtualized?: boolean;
 }
 
 const getSkeletons = (view:ArticleView) => new Array(view === ArticleView.SQUARE ? 9 : 3)
@@ -34,6 +35,7 @@ export const ArticleList = (props: ArticleListProps) => {
     isLoading,
     view = ArticleView.WIDE,
     target,
+    virtualized = true,
   } = props;
 
   const { t } = useTranslation();
@@ -54,11 +56,11 @@ export const ArticleList = (props: ArticleListProps) => {
     for (let i = fromIndex; i < toIndex; i += 1) {
       items.push(
         <ArticleListItem
-          className={styles.card}
-          article={articles[i]}
+          key={i}
           view={view}
           target={target}
-          key={i}
+          article={articles[i]}
+          className={styles.card}
         />,
       );
     }
@@ -87,28 +89,45 @@ export const ArticleList = (props: ArticleListProps) => {
       scrollElement={document.getElementById(PAGE_ID) as Element}
     >
       {({
-        height,
         width,
+        height,
+        scrollTop,
+        isScrolling,
         registerChild,
         onChildScroll,
-        isScrolling,
-        scrollTop,
       }) => (
         <div
           ref={registerChild}
           className={classNames(styles.ArticleList, {}, [className, styles[view]])}
         >
-          <List
-            height={height ?? 710}
-            width={width ? width - 80 : 700}
-            rowCount={rowCount}
-            rowHeight={isWide ? 700 : 340}
-            rowRenderer={rowRender}
-            autoHeight
-            onScroll={onChildScroll}
-            isScrolling={isScrolling}
-            scrollTop={scrollTop}
-          />
+
+          {virtualized
+            ? (
+              <List
+                autoHeight
+                rowCount={rowCount}
+                scrollTop={scrollTop}
+                height={height ?? 710}
+                rowRenderer={rowRender}
+                onScroll={onChildScroll}
+                isScrolling={isScrolling}
+                rowHeight={isWide ? 700 : 340}
+                width={width ? width - 80 : 700}
+              />
+
+            )
+            : (
+              articles.map((article) => (
+                <ArticleListItem
+                  view={view}
+                  target={target}
+                  key={article.id}
+                  article={article}
+                  className={styles.card}
+                />
+              ))
+            )}
+
           {isLoading && getSkeletons(view)}
 
         </div>

@@ -14,25 +14,27 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
   const { className } = props;
   const { t } = useTranslation();
 
-  const { data: articles, isLoading, error } = useArticleRecommendationsList(4);
+  const { data: articles, isLoading, error } = useArticleRecommendationsList(5);
 
-  if (isLoading || error) {
+  if (isLoading || error || !articles) {
     return null;
   }
 
   return (
     <VStack
       gap="8"
+      wide
     >
       <Text
         textSize={TextSize.L}
         text={t('recommended')}
       />
       <ArticleList
-        className={styles.recommendations}
         target="_blank"
         articles={articles}
+        virtualized={false}
         view={ArticleView.SQUARE}
+        className={styles.recommendations}
       />
     </VStack>
   );

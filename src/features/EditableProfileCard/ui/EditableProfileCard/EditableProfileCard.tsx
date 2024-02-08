@@ -11,6 +11,7 @@ import {
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from 'shared/ui/Stack';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
@@ -35,12 +36,6 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
   const dispatch = useAppDispatch();
 
-  useInitialEffect(() => {
-    if (id) {
-      dispatch(fetchProfileData(id));
-    }
-  });
-
   const error = useSelector(getProfileError);
 
   const formData = useSelector(getProfileForm);
@@ -50,6 +45,12 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   const isLoading = useSelector(getProfileIsLoading);
 
   const validateErrors = useSelector(getProfileValidateErrors);
+
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
+    }
+  });
 
   const onChangeFirstName = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ first: value || '' }));
@@ -82,29 +83,38 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
       reducers={reducers}
       removeAfterUnmount
     >
-      <EditableProfileCardHeader />
-      {validateErrors?.length && validateErrors.map((error) => (
-        <Text
-          key={error}
-          text={error}
-          theme={TextTheme.ERROR}
-          title={t('error-occured')}
+      <VStack
+        gap="8"
+        wide
+      >
+        <EditableProfileCardHeader
+          data-testid="editableProfileCardHeader"
         />
-      ))}
-      <ProfileCard
-        error={error}
-        data={formData}
-        readonly={readonly}
-        isLoading={isLoading}
-        onChangeAge={onChangeAge}
-        onChangeCity={onChangeCity}
-        onChangeAvatar={onChangeAvatar}
-        onChangeCountry={onChangeCountry}
-        onChangeLastName={onChangeLastName}
-        onChangeUserName={onChangeUserName}
-        onChangeCurrency={onChangeCurrency}
-        onChangeFirstName={onChangeFirstName}
-      />
+        {validateErrors?.length && validateErrors.map((error) => (
+          <Text
+            data-testid="EditableProfileCard.Error"
+            key={error}
+            text={error}
+            theme={TextTheme.ERROR}
+            title={t('error-occured')}
+          />
+        ))}
+        <ProfileCard
+          data-testid="profileCard"
+          error={error}
+          data={formData}
+          readonly={readonly}
+          isLoading={isLoading}
+          onChangeAge={onChangeAge}
+          onChangeCity={onChangeCity}
+          onChangeAvatar={onChangeAvatar}
+          onChangeCountry={onChangeCountry}
+          onChangeLastName={onChangeLastName}
+          onChangeUserName={onChangeUserName}
+          onChangeCurrency={onChangeCurrency}
+          onChangeFirstName={onChangeFirstName}
+        />
+      </VStack>
     </DynamicModuleLoader>
   );
 });
