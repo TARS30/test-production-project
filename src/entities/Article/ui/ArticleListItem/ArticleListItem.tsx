@@ -32,7 +32,6 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
 
   const textBlock = article.blocks
     .find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
-
   const { t } = useTranslation();
 
   if (view === ArticleView.SQUARE) {

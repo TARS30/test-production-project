@@ -7,18 +7,18 @@ import {
 import { AxiosInstance } from 'axios';
 import { articleDetailsScheme } from 'entities/Article';
 import { CounterScheme } from 'entities/Counter';
-import { ProfileScheme } from 'entities/Profile';
 import { UserScheme } from 'entities/User';
 import { AddCommentFormScheme } from 'features/AddCommentForm';
 import { LoginScheme } from 'features/AuthByUsername';
-import { ArticleDetailsCommentsScheme, ArticleDetailsPageScheme } from 'pages/ArticleDetailsPage';
+import { ProfileScheme } from 'features/EditableProfileCard';
+import { ArticleDetailsPageScheme } from 'pages/ArticleDetailsPage';
 import { ArticlesPageScheme } from 'pages/ArticlesPage';
 import { CombinedState } from 'redux';
+import { rtkApi } from 'shared/api/rtkApi';
 import { ScrollSaverScheme } from 'widgets/Page/ScrollSaver/types/ScrollSaverScheme';
-import { ArticleRecommendationsScheme } from
-  '../../../../pages/ArticleDetailsPage/model/types/ArticleRecommendationsScheme';
 
 export interface StateScheme {
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
     user: UserScheme;
     counter: CounterScheme;
     loginForm?: LoginScheme;
@@ -28,7 +28,6 @@ export interface StateScheme {
     articleDetails?: articleDetailsScheme;
     addCommentForm?: AddCommentFormScheme;
     ArticleDetailsPage?: ArticleDetailsPageScheme;
-
 }
 
 export type StateSchemeKey = keyof StateScheme

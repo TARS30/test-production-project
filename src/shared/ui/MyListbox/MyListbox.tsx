@@ -59,12 +59,10 @@ export function MyListbox(props: ListBoxProps) {
         value={value}
         onChange={onChange}
       >
-        <Listbox.Button>
-          <Button
-            className={styles.trigger}
-          >
-            {value ?? defaultValue}
-          </Button>
+        <Listbox.Button
+          className={styles.trigger}
+        >
+          {value ?? defaultValue}
         </Listbox.Button>
         <Listbox.Options
           className={classNames(styles.options, {}, optionClasses)}

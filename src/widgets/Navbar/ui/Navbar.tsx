@@ -76,14 +76,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             )}
             direction="bottom left"
           />
-          {/* <Button
-            theme={ButtonTheme.BACKGROUND_INVERTED}
-            onClick={onLogout}
-            className={styles.btn}
-          >
-            {t('logout')}
-
-          </Button> */}
         </HStack>
       </HStack>
     );

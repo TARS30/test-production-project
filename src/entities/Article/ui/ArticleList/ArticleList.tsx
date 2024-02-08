@@ -55,7 +55,7 @@ export const ArticleList = (props: ArticleListProps) => {
       items.push(
         <ArticleListItem
           className={styles.card}
-          article={articles[index]}
+          article={articles[i]}
           view={view}
           target={target}
           key={i}
@@ -67,7 +67,7 @@ export const ArticleList = (props: ArticleListProps) => {
       <div
         key={key}
         style={style}
-        className={styles.row}
+        className={classNames(styles.row, {}, [className])}
       >
         {items}
       </div>

@@ -41,8 +41,8 @@ export function MyDropdown(props: DropdownProps) {
 
   return (
     <Menu
-      as="button"
       className={classNames(styles.MyDropdown, {}, [className])}
+      as="div"
     >
       <Menu.Button className={styles.button}>
         {trigger}
@@ -51,6 +51,7 @@ export function MyDropdown(props: DropdownProps) {
         {items.map((item) => {
           const content = ({ active }: {active: boolean}) => (
             <button
+              key={item.href}
               type="button"
               disabled={item.disabled}
               onClick={item.onClick}
@@ -62,14 +63,23 @@ export function MyDropdown(props: DropdownProps) {
 
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item
+                key={item.href}
+                as={AppLink}
+                to={item.href}
+                disabled={item.disabled}
+              >
                 {content}
               </Menu.Item>
             );
           }
 
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled}>
+            <Menu.Item
+              key={item.href}
+              as={Fragment}
+              disabled={item.disabled}
+            >
               {content}
             </Menu.Item>
           );
