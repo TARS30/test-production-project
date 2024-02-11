@@ -97,6 +97,7 @@ export const ArticleList = (props: ArticleListProps) => {
         onChildScroll,
       }) => (
         <div
+        // @ts-ignore
           ref={registerChild}
           className={classNames(styles.ArticleList, {}, [className, styles[view]])}
         >

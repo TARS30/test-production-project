@@ -22,13 +22,13 @@ export const CommentItem = memo((props: CommentItemProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(styles.CommentItem, {}, [className, styles.isLoading])}>
+      <VStack wide className={classNames(styles.CommentItem, {}, [className, styles.isLoading])}>
         <div className={classNames(styles.userHeader, {}, [className])}>
           <Skeleton border="50%" width={30} height={30} />
           <Skeleton border="3px" height={30} width={200} />
         </div>
         <Skeleton border="3px" height={30} />
-      </div>
+      </VStack>
     );
   }
 

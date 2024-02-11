@@ -1,5 +1,7 @@
 {
   "aboba": "ABOBA",
+  "admin": "admin",
+  "admin-panel": "admin-panel",
   "age": "Age",
   "all": "All",
   "article-wasnt-found": "Article wasn't found",
@@ -60,5 +62,6 @@
   "wasn't": "Article wasn't found",
   "wrong-username-or-password": "wrong username or password",
   "yazyk": "EN",
-  "you": "You"
+  "you": "You",
+  "you-don-t-have-access-to-this-page": "you-don-t-have-access-to-this-page"
 }

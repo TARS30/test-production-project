@@ -1,5 +1,7 @@
 {
   "aboba": "АБОБА",
+  "admin": "admin",
+  "admin-panel": "admin-panel",
   "age": "Возраст",
   "all": "Все",
   "article-wasnt-found": "Статья не найдена",
@@ -60,5 +62,6 @@
   "wasn't": "Статья не найдена",
   "wrong-username-or-password": "неправильное имя пользователя или пароль",
   "yazyk": "RU",
-  "you": "Вы"
+  "you": "Вы",
+  "you-don-t-have-access-to-this-page": "you-don-t-have-access-to-this-page"
 }

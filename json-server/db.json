@@ -571,22 +571,41 @@
       "userId": "1",
       "text": "asdasdasd",
       "id": "DK3bzKc"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "3212131231",
+      "id": "DfwqzC4"
     }
   ],
   "users": [
     {
       "id": "1",
-      "username": "username1",
+      "username": "admin",
       "password": "1",
-      "role": "ADMIN",
+      "role": [
+        "ADMIN"
+      ],
       "avatar": "https://ichef.bbci.co.uk/news/976/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg"
     },
     {
       "id": "2",
-      "username": "username2",
-      "password": "2",
-      "role": "USER",
+      "username": "user",
+      "password": "1",
+      "role": [
+        "USER"
+      ],
       "avatar": "https://upload.wikimedia.org/wikipedia/ru/thumb/4/4d/Wojak.png/200px-Wojak.png"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "1",
+      "role": [
+        "MANAGER"
+      ],
+      "avatar": "https://i.pinimg.com/1200x/2f/d2/71/2fd2711103dd690793534616614448da.jpg"
     }
   ],
   "profile": [
@@ -598,7 +617,7 @@
       "currency": "EUR",
       "country": "Ukraine",
       "city": "samaras",
-      "username": "admins",
+      "username": "admin",
       "avatar": "https://ichef.bbci.co.uk/news/976/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg"
     },
     {
@@ -611,6 +630,17 @@
       "city": "samara2",
       "username": "SUER",
       "avatar": "https://upload.wikimedia.org/wikipedia/ru/thumb/4/4d/Wojak.png/200px-Wojak.png"
+    },
+    {
+      "id": "3",
+      "first": "aboba3",
+      "lastname": "third3",
+      "age": 561,
+      "currency": "USD",
+      "country": "Armenia",
+      "city": "samara3",
+      "username": "MANAGER",
+      "avatar": "https://i.pinimg.com/1200x/2f/d2/71/2fd2711103dd690793534616614448da.jpg"
     }
   ]
 }

@@ -1,8 +1,12 @@
 .recommendations {
   margin-top: 20px;
   flex-wrap: nowrap;
+  padding-bottom: 10px;
+}
+
+.recommendationsWrapper {
   overflow-y: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
   scrollbar-color: var(--accent-color) var(--inverted-bg-color);
   scrollbar-width: thin;
 }

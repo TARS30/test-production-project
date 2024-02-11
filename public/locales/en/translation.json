@@ -59,5 +59,7 @@
   "recommended": "Recommended",
   "aboba": "ABOBA",
   "create-article": "Create article",
-  "type-comment": "Type comment"
+  "type-comment": "Type comment",
+  "admin": "Admin",
+  "you-don-t-have-access-to-this-page": "You don`t have access to this page"
 }

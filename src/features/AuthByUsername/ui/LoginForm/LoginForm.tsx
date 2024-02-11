@@ -45,7 +45,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     dispatch(loginActions.setPassword(value));
   }, [dispatch]);
 
-  const onLoginClick = useCallback(async (e) => {
+  const onLoginClick = useCallback(async (e: any) => {
     e.preventDefault();
     const result = await dispatch(loginByUsername({ username, password }));
 
@@ -82,7 +82,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         <Input
           onChange={onChangePassword}
           placeholder={t('password')}
-          type="text"
+          type="password"
           className={styles.input}
           value={password}
           disabled={isLoading}

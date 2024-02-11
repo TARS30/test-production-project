@@ -4,11 +4,12 @@ import { Text, TextSize } from 'shared/ui/Text/Text';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { CommentList } from 'entities/Comment';
 import { useTranslation } from 'react-i18next';
-import { useCallback } from 'react';
+import { Suspense, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useParams } from 'react-router-dom';
+import { Loader } from 'shared/ui/Loader';
 import { getArticleDetailsCommentsIsLoading } from
   '../../model/selectors/comments/comments';
 import { getArticleComments } from
@@ -20,7 +21,7 @@ import { fetchCommentsByArticleId } from
 
 interface ArticleDetailsCommentsProps {
     className?: string;
-    id: string
+    id?: string
 }
 
 export const ArticleDetailsComments = (props: ArticleDetailsCommentsProps) => {
@@ -47,9 +48,12 @@ export const ArticleDetailsComments = (props: ArticleDetailsCommentsProps) => {
         textSize={TextSize.L}
         text={t('comments')}
       />
-      <AddCommentForm
-        onSendComment={onSendComment}
-      />
+      {/* eslint-disable-next-line i18next/no-literal-string */}
+      <Suspense fallback={<Loader />}>
+        <AddCommentForm
+          onSendComment={onSendComment}
+        />
+      </Suspense>
       <CommentList
         isLoading={commentsIsLoading}
         comments={comments}

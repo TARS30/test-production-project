@@ -24,6 +24,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
     <VStack
       gap="8"
       wide
+      className={styles.recommendationsWrapper}
     >
       <Text
         textSize={TextSize.L}

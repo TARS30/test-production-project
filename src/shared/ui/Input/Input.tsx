@@ -1,6 +1,6 @@
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 
-import React, { InputHTMLAttributes, memo } from 'react';
+import React, { InputHTMLAttributes, memo, useRef } from 'react';
 import styles from './Input.module.scss';
 
 type HTMLInputProps = Omit<
@@ -27,6 +27,7 @@ export const Input = memo((props: InputProps) => {
     readonly,
     'data-testid': dataTestId,
   } = props;
+  const ref = useRef<HTMLInputElement>(null);
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
@@ -38,6 +39,7 @@ export const Input = memo((props: InputProps) => {
 
   return (
     <input
+      ref={ref}
       data-testid={dataTestId}
       className={classNames(styles.Input, mods, [className])}
       type={type}

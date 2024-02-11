@@ -1,5 +1,7 @@
 import { useTheme } from 'app/providers/ThemeProvider';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+  getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -24,6 +26,12 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const authData = useSelector(getUserAuthData);
   const { theme } = useTheme();
   const dispatch = useDispatch();
+
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
+
+  const adminIsVisible = isAdmin || isManager;
+
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
   }, []);
@@ -60,10 +68,18 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         </HStack>
         <HStack className={styles.links}>
           <MyDropdown
+            direction="bottom left"
             className={styles.dropdown}
             items={[
+              ...(adminIsVisible ? [{
+                content: t('admin'),
+                href: RoutePath.admin_panel_page,
+              }] : []),
               {
-                id: '1',
+                content: t('profile'),
+                href: RoutePath.profile + authData.id,
+              },
+              {
                 content: t('logout'),
                 onClick: onLogout,
               },
@@ -75,7 +91,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 src={authData.avatar}
               />
             )}
-            direction="bottom left"
           />
         </HStack>
       </HStack>

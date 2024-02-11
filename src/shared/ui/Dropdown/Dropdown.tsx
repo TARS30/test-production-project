@@ -10,7 +10,6 @@ export interface DropdownItems{
     content?: ReactNode;
     onClick?: () => void;
     href?: string;
-    id?: string;
 }
 
 interface DropdownProps {
@@ -52,7 +51,7 @@ export function MyDropdown(props: DropdownProps) {
         {items.map((item) => {
           const content = ({ active }: {active: boolean}) => (
             <button
-              key={item.id}
+              key={String(item.content)}
               type="button"
               disabled={item.disabled}
               onClick={item.onClick}
@@ -65,7 +64,7 @@ export function MyDropdown(props: DropdownProps) {
           if (item.href) {
             return (
               <Menu.Item
-                key={item.id}
+                key={item.href}
                 as={AppLink}
                 to={item.href}
                 disabled={item.disabled}
@@ -77,7 +76,7 @@ export function MyDropdown(props: DropdownProps) {
 
           return (
             <Menu.Item
-              key={item.id}
+              key={String(content)}
               as={Fragment}
               disabled={item.disabled}
             >
@@ -87,7 +86,6 @@ export function MyDropdown(props: DropdownProps) {
         })}
       </Menu.Items>
 
-      <Menu.Items className={styles.items} />
     </Menu>
   );
 }
