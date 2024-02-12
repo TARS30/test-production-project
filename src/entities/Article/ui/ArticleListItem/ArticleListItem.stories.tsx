@@ -15,7 +15,7 @@ const article = {
   views: 1022,
   user: {
     id: '1',
-    username: 'nAME',
+    username: 'NAME',
     avatar: 'https://upload.wikimedia.org/wikipedia/ru/thumb/4/4d/Wojak.png/200px-Wojak.png',
   },
   createdAt: '26.02.2022',
