@@ -1,4 +1,4 @@
-export { ScrollScheme } from './types/ScrollSaverScheme';
+export type { ScrollScheme } from './types/ScrollSaverScheme';
 
 export { getScrollSaverByPath } from './selectors/ScrollSaver';
 

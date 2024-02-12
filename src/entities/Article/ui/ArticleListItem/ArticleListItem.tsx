@@ -10,8 +10,13 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { HTMLAttributeAnchorTarget } from 'react';
 import {
-  Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+  ArticleBlockType,
+  ArticleView,
+} from '../../model/consts/consts';
+import {
+  Article, ArticleTextBlock,
 } from '../../model/types/article';
+
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import styles from './ArticleListItem.module.scss';
 

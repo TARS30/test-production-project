@@ -5,7 +5,7 @@ import {
   ArticleView,
   ArticleViewSelector,
 } from 'entities/Article';
-import { ArticleType } from 'entities/Article/model/types/article';
+import { ArticleType } from 'entities/Article/model/consts/consts';
 import {
   memo, useCallback,
 } from 'react';

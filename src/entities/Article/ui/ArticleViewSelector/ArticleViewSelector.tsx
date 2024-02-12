@@ -1,11 +1,10 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 
-import { useTranslation } from 'react-i18next';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import squareIcon from 'shared/assets/icons/squareIcon.svg';
 import wideIcon from 'shared/assets/icons/wideIcon.svg';
-import { ArticleView } from '../../model/types/article';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Icon } from 'shared/ui/Icon/Icon';
+import { ArticleView } from '../../model/consts/consts';
 import styles from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {

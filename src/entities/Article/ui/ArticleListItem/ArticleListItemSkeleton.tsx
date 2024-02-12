@@ -1,12 +1,7 @@
-import eyeViews from 'shared/assets/icons/eyeViews.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Card } from 'shared/ui/Card/Card';
-import { Icon } from 'shared/ui/Icon/Icon';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Text, TextSize } from 'shared/ui/Text/Text';
-import {
-  ArticleView,
-} from '../../model/types/article';
+import { ArticleView } from '../../model/consts/consts';
 import styles from './ArticleListItem.module.scss';
 
 interface ArticleListItemSkeletonProps {

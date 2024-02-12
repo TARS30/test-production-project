@@ -1,4 +1,5 @@
-import { ArticleView, ArticleSortField, ArticleType } from 'entities/Article/model/types/article';
+import { ArticleType, ArticleView, ArticleSortField } from 'entities/Article/model/consts/consts';
+
 import {
   PayloadAction,
   createEntityAdapter,

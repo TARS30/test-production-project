@@ -1,29 +1,37 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-
 import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import CalendarIcon from 'shared/assets/icons/CalendarIcon.svg';
 import EyeViewsIcon from 'shared/assets/icons/eyeViews-20-20.svg';
-import { DynamicModuleLoader, ReducersList }
-  from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  ReducersList,
+  DynamicModuleLoader,
+} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import {
-  Text, TextAlign, TextSize,
+  HStack,
+  VStack,
+} from 'shared/ui/Stack';
+import {
+  Text,
+  TextSize,
+  TextAlign,
 } from 'shared/ui/Text/Text';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { HStack, VStack } from 'shared/ui/Stack';
-import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading }
-  from '../../model/selectors/articleDetails';
+import { ArticleBlockType } from '../../model/consts/consts';
+import {
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsIsLoading,
+} from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slices/articleDetailsSlice';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
-import { ArticleImageBlockComponent } from
-  '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import styles from './ArticleDetails.module.scss';
 
