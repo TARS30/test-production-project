@@ -11,12 +11,12 @@ const article = {
   id: '1',
   title: 'Javascript news aschcnlasnc',
   subtitle: 'Что нового в JS за 2022 год?',
-  img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+  img: '',
   views: 1022,
   user: {
     id: '1',
     username: 'NAME',
-    avatar: 'https://upload.wikimedia.org/wikipedia/ru/thumb/4/4d/Wojak.png/200px-Wojak.png',
+    avatar: '',
   },
   createdAt: '26.02.2022',
   type: [
@@ -53,7 +53,7 @@ const article = {
     {
       id: '2',
       type: 'IMAGE',
-      src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+      src: '',
       title: 'Рисунок 1 - скриншот сайта',
     },
     {
@@ -73,7 +73,7 @@ const article = {
     {
       id: '8',
       type: 'IMAGE',
-      src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+      src: '',
       title: 'Рисунок 1 - скриншот сайта',
     },
     {
