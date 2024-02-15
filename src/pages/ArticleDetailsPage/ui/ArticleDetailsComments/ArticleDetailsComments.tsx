@@ -21,7 +21,7 @@ import { fetchCommentsByArticleId } from
 
 interface ArticleDetailsCommentsProps {
     className?: string;
-    id?: string
+    id?: string;
 }
 
 export const ArticleDetailsComments = (props: ArticleDetailsCommentsProps) => {
