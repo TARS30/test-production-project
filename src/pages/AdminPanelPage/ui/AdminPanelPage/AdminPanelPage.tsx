@@ -12,6 +12,7 @@ const AdminPanelPage = memo((props: AdminPanelPageProps) => {
   const { t } = useTranslation();
 
   return (
+    // eslint-disable-next-line i18next/no-literal-string
     <Page className={classNames('', {}, [className])}>
       Admin Panel Page
     </Page>

@@ -1,4 +1,4 @@
-import { ArticleList } from 'entities/Article';
+import { ArticleList } from 'entitiess/Article';
 import { useSelector } from 'react-redux';
 import { ErrorPage } from 'widgets/ErrorPage';
 import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articlesPageSelectors';

@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { AddCommentForm } from 'features/AddCommentForm';
-import { CommentList } from 'entities/Comment';
+import { CommentList } from 'entitiess/Comment';
 import { useTranslation } from 'react-i18next';
 import { Suspense, useCallback } from 'react';
 import { useSelector } from 'react-redux';

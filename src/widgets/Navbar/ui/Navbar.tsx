@@ -1,7 +1,7 @@
 import { useTheme } from 'app/providers/ThemeProvider';
 import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from 'entities/User';
+} from 'entitiess/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';

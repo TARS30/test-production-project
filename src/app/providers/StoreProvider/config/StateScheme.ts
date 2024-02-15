@@ -5,9 +5,9 @@ import {
   ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { articleDetailsScheme } from 'entities/Article';
-import { CounterScheme } from 'entities/Counter';
-import { UserScheme } from 'entities/User';
+import { articleDetailsScheme } from 'entitiess/Article';
+import { CounterScheme } from 'entitiess/Counter';
+import { UserScheme } from 'entitiess/User';
 import { AddCommentFormScheme } from 'features/AddCommentForm';
 import { LoginScheme } from 'features/AuthByUsername';
 import { ProfileScheme } from 'features/EditableProfileCard';

@@ -29,8 +29,8 @@ Story.args = {
     },
   ],
 };
-export const topLeft = Template.bind({});
-topLeft.args = {
+export const TopLeft = Template.bind({});
+TopLeft.args = {
   trigger: <Button>open</Button>,
   direction: 'top left',
   items: [
@@ -45,8 +45,8 @@ topLeft.args = {
     },
   ],
 };
-export const topRight = Template.bind({});
-topRight.args = {
+export const TopRight = Template.bind({});
+TopRight.args = {
   trigger: <Button>open</Button>,
   direction: 'top right',
   items: [
@@ -61,8 +61,8 @@ topRight.args = {
     },
   ],
 };
-export const bottomLeft = Template.bind({});
-bottomLeft.args = {
+export const BottomLeft = Template.bind({});
+BottomLeft.args = {
   trigger: <Button>open</Button>,
   direction: 'bottom left',
   items: [
@@ -77,8 +77,8 @@ bottomLeft.args = {
     },
   ],
 };
-export const bottomRight = Template.bind({});
-bottomRight.args = {
+export const BottomRight = Template.bind({});
+BottomRight.args = {
   trigger: <Button>open</Button>,
   direction: 'bottom right',
   items: [

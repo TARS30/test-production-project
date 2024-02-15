@@ -4,7 +4,7 @@ import {
   ArticleType,
   ArticleView,
   ArticleSortField,
-} from 'entities/Article';
+} from 'entitiess/Article';
 
 import { SortOrder } from 'shared/types';
 

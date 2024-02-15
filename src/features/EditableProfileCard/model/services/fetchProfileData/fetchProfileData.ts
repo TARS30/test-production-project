@@ -1,4 +1,4 @@
-import { Profile } from 'entities/Profile';
+import { Profile } from 'entitiess/Profile';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 

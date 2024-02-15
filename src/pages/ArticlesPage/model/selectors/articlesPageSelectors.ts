@@ -1,4 +1,4 @@
-import { ArticleType, ArticleView, ArticleSortField } from 'entities/Article/model/consts/consts';
+import { ArticleType, ArticleView, ArticleSortField } from 'entitiess/Article/model/consts/consts';
 
 import { StateScheme } from 'app/providers/StoreProvider';
 

@@ -30,8 +30,8 @@ Story.args = {
     },
   ],
 };
-export const topLeft = Template.bind({});
-topLeft.args = {
+export const TopLeft = Template.bind({});
+TopLeft.args = {
   direction: 'top left',
   value: 'asdasd',
   items: [
@@ -49,8 +49,8 @@ topLeft.args = {
     },
   ],
 };
-export const topRight = Template.bind({});
-topRight.args = {
+export const TopRight = Template.bind({});
+TopRight.args = {
   direction: 'top right',
   value: 'asdasd',
   items: [
@@ -68,8 +68,8 @@ topRight.args = {
     },
   ],
 };
-export const bottomLeft = Template.bind({});
-bottomLeft.args = {
+export const BottomLeft = Template.bind({});
+BottomLeft.args = {
   direction: 'bottom left',
   value: 'asdasd',
   items: [
@@ -87,8 +87,8 @@ bottomLeft.args = {
     },
   ],
 };
-export const bottomRight = Template.bind({});
-bottomRight.args = {
+export const BottomRight = Template.bind({});
+BottomRight.args = {
   direction: 'bottom right',
   value: 'asdasd',
   items: [

@@ -1,4 +1,5 @@
+// import { StoryFn } from '@storybook/addons';
+import { StoryFn } from '@storybook/react';
 import 'app/styles/index.scss';
-import { Story } from '@storybook/react';
 
-export const StyleDecorator = (story: () => Story) => story();
+export const StyleDecorator = (story: () => StoryFn) => story();

@@ -1,6 +1,6 @@
 export { ValidateProfileError } from './model/consts/consts';
 
-export type { Profile } from 'entities/Profile/model/types/profile';
+export type { Profile } from 'entitiess/Profile/model/types/profile';
 export type { ProfileScheme } from './model/types/EditableProfileCardSchema';
 
 export { getProfileData } from './model/selectors/getProfileData/getProfileData';

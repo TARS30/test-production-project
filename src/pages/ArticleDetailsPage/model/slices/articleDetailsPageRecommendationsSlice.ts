@@ -4,7 +4,7 @@ import {
   createSlice,
 } from '@reduxjs/toolkit';
 import { StateScheme } from 'app/providers/StoreProvider';
-import { Article } from 'entities/Article';
+import { Article } from 'entitiess/Article';
 import { ArticleRecommendationsScheme } from '../types/ArticleRecommendationsScheme';
 import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
 

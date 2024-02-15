@@ -1,4 +1,4 @@
-import { ArticleList, ArticleView } from 'entities/Article';
+import { ArticleList, ArticleView } from 'entitiess/Article';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { VStack } from 'shared/ui/Stack';

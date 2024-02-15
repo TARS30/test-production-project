@@ -1,4 +1,4 @@
-import { ArticleType, ArticleView, ArticleSortField } from 'entities/Article/model/consts/consts';
+import { ArticleType, ArticleView, ArticleSortField } from 'entitiess/Article/model/consts/consts';
 
 import {
   PayloadAction,
@@ -8,7 +8,7 @@ import {
 import { StateScheme } from 'app/providers/StoreProvider';
 import {
   Article,
-} from 'entities/Article';
+} from 'entitiess/Article';
 import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 
 import { SortOrder } from 'shared/types';

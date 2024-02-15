@@ -4,7 +4,7 @@ import styles from './Icon.module.scss';
 
 interface IconProps {
     className?: string;
-    Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
+    Svg: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
 export const Icon = (props: IconProps) => {
@@ -14,7 +14,6 @@ export const Icon = (props: IconProps) => {
   } = props;
 
   return (
-
     <Svg className={classNames(styles.Icon, {}, [className])} />
   );
 };

@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails } from 'entitiess/Article';
 import { ArticleRecommendationsList } from 'features/ArticleRecommendationsList';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
