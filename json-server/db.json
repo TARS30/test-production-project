@@ -1,4 +1,31 @@
 {
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Notification 1",
+      "description": "Something happend #1",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id":"2",
+      "title": "Notification 2",
+      "description": "Something happend #2",
+      "userId":"2"
+    },
+    {
+      "id":"3",
+      "title": "Notification 3",
+      "description": "Something happend #3",
+      "userId":"3"
+    },
+    {
+      "id":"4",
+      "title": "Notification 4",
+      "description": "Something happend #4",
+      "userId":"1"
+    }
+  ],
   "posts": [
     {
       "id": "1",

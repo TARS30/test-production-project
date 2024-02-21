@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Select } from 'shared/ui/Select/Select';
 // import styles from './CurrencySelect.module.scss';
-import { MyListbox } from 'shared/ui/MyListbox/MyListbox';
+import { MyListbox } from 'shared/ui/Popups/ui/MyListbox/MyListbox';
 import { Currency } from '../../model/types/currency';
 
 interface CurrencySelectProps {

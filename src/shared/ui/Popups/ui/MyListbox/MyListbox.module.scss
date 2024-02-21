@@ -1,0 +1,21 @@
+.trigger {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.options {
+  min-width: 100%;
+  z-index: 10000;
+  position: absolute;
+  border-radius: 8px;
+  background: var(--list-box-bg);
+  box-shadow: 4px 4px 10px var(--list-box-shadow);
+}
+
+.option {
+  padding: 10px 20px;
+  cursor: pointer;
+}
