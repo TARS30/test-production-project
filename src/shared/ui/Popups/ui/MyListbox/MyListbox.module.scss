@@ -8,7 +8,7 @@
 
 .options {
   min-width: 100%;
-  z-index: 10000;
+  z-index: var(--my-listbox-z-index);
   position: absolute;
   border-radius: 8px;
   background: var(--list-box-bg);

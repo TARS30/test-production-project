@@ -6,17 +6,20 @@ interface IconProps {
     className?: string;
     Svg: React.FC<React.SVGProps<SVGSVGElement>>;
     inverted?: boolean;
+    onClick?: () => void;
 }
 
 export const Icon = (props: IconProps) => {
   const {
     Svg,
-    className,
+    onClick,
     inverted,
+    className,
   } = props;
 
   return (
     <Svg
+      onClick={onClick}
       className={classNames(inverted ? styles.inverted : styles.Icon, {}, [className])}
     />
   );

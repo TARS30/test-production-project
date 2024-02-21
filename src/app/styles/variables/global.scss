@@ -27,7 +27,15 @@ body {
   --overlay-bg-color: #000000a1;
   --error-color: red;
   --error-secondary-color: #c50000;
+  --overlay-color: rgb(0 0 0 / 70%);
+  --modal-index: 100;
 
   // z-indexes
-  --modal-z-index: 100;
+  --drawer-z-index: -1;
+  --overlay-z-index: -1;
+  --modal-z-index: 10;
+  --drawer-content-z-index: 10;
+  --popover-z-index: 100;
+  --my-listbox-z-index: 100;
+  --dropdown-items-z-index: 100;
 }

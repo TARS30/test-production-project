@@ -14,6 +14,9 @@ import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { HStack } from 'shared/ui/Stack';
 import { Text, TextSize } from 'shared/ui/Text/Text';
+import { Drawer } from 'shared/ui/Drawer/Drawer';
+import { NotificationList } from 'entitiess/Notification';
+import { BrowserView, MobileView } from 'react-device-detect';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -22,16 +25,16 @@ interface NavbarProps {
 
 export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
-  const [isAuthModal, setIsAuthModal] = useState(false);
+  const [isAuthModalVisible, setIsAuthModalVisible] = useState(false);
   const authData = useSelector(getUserAuthData);
   const { theme } = useTheme();
 
   const onCloseModal = useCallback(() => {
-    setIsAuthModal(false);
+    setIsAuthModalVisible(false);
   }, []);
 
   const onShowModal = useCallback(() => {
-    setIsAuthModal(true);
+    setIsAuthModalVisible(true);
   }, []);
 
   if (authData) {
@@ -89,9 +92,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           {t('login')}
 
         </Button>
-        {isAuthModal && (
+        {isAuthModalVisible && (
         <LoginModal
-          isOpen={isAuthModal}
+          isOpen={isAuthModalVisible}
           onClose={onCloseModal}
         />
         )}

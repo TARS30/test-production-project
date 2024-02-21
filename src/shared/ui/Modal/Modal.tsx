@@ -2,10 +2,11 @@
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 
 import { useTheme } from 'app/providers/ThemeProvider';
-import React, {
+import {
   ReactNode, useCallback, useEffect, useState,
 } from 'react';
 import { Button, ButtonTheme } from '../Button/Button';
+import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import styles from './Modal.module.scss';
 
@@ -40,10 +41,6 @@ export const Modal = (props : ModalProps) => {
     }
   }, [isOpen]);
 
-  const onContentClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
-
   const onKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') {
       onClose();
@@ -70,17 +67,16 @@ export const Modal = (props : ModalProps) => {
   return (
     <Portal element={document.body}>
       <div className={classNames(styles.Modal, mods, [className, theme, 'app_modal'])}>
-        <div onClick={closeHandler} className={styles.overlay}>
-          <div onClick={onContentClick} className={styles.content}>
-            <Button
-              className={styles.button}
-              theme={ButtonTheme.CLEAR}
-              onClick={closeHandler}
-            >
-              <span>&#10006;</span>
-            </Button>
-            {children}
-          </div>
+        <Overlay onClick={closeHandler} />
+        <div className={styles.content}>
+          <Button
+            className={styles.button}
+            theme={ButtonTheme.CLEAR}
+            onClick={closeHandler}
+          >
+            <span>&#10006;</span>
+          </Button>
+          {children}
         </div>
       </div>
     </Portal>

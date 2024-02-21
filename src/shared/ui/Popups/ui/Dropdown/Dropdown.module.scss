@@ -13,7 +13,7 @@
 .items {
   background: var(--card-bg);
   position: absolute;
-  z-index: 100;
+  z-index: var(--dropdown-items-z-index);
   border-radius: 8px;
   border: 1px solid var(--primary-color);
   display: flex;
