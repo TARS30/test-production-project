@@ -21,7 +21,7 @@
     "test:ui:ci": "loki --reactUri file:./storybook-static",
     "test:ui:approve": "npx loki approve",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build -c ./config/storybook",
+    "storybook:build": "storybook build -c ./storybook",
     "generate": "node ./scripts/createSlice/index.js"
   },
   "keywords": [],
