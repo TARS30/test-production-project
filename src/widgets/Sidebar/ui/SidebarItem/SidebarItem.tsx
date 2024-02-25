@@ -5,7 +5,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
 import { SidebarItemType } from '../../model/types/sidebar';
 import styles from './SidebarItem.module.scss';
-// import { getUserAuthData } from 'entities/User'; при изменении импорта на относительный ошибок стало на одну меньше
 import { getUserAuthData } from '../../../../entitiess/User';
 
 interface SidebarItemProps {

@@ -1,6 +1,7 @@
 import { VStack } from 'shared/ui/Stack';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { BrowserView, MobileView } from 'react-device-detect';
 import { useNotifications } from '../../api/notificationApi';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 import styles from './NotificationList.module.scss';
@@ -18,13 +19,26 @@ export const NotificationList = (props: NotificationListProps) => {
 
   if (isLoading) {
     return (
-      <VStack
-        gap="16"
-      >
-        <Skeleton border="8px" height={80} width={400} />
-        <Skeleton border="8px" height={80} width={400} />
-        <Skeleton border="8px" height={80} width={400} />
-      </VStack>
+      <>
+        <MobileView>
+          <VStack
+            gap="16"
+          >
+            <Skeleton border="8px" height={80} width="100%" />
+            <Skeleton border="8px" height={80} width="100%" />
+            <Skeleton border="8px" height={80} width="100%" />
+          </VStack>
+        </MobileView>
+        <BrowserView>
+          <VStack
+            gap="16"
+          >
+            <Skeleton border="8px" height={80} width={400} />
+            <Skeleton border="8px" height={80} width={400} />
+            <Skeleton border="8px" height={80} width={400} />
+          </VStack>
+        </BrowserView>
+      </>
     );
   }
 
