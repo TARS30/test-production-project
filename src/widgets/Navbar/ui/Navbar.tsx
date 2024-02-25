@@ -14,9 +14,6 @@ import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { HStack } from 'shared/ui/Stack';
 import { Text, TextSize } from 'shared/ui/Text/Text';
-import { Drawer } from 'shared/ui/Drawer/Drawer';
-import { NotificationList } from 'entitiess/Notification';
-import { BrowserView, MobileView } from 'react-device-detect';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {

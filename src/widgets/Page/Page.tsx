@@ -1,7 +1,11 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import {
-  MutableRefObject, ReactNode, useRef, UIEvent, memo,
+  memo,
+  useRef,
+  UIEvent,
+  ReactNode,
+  MutableRefObject,
 } from 'react';
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';

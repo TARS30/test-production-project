@@ -1,11 +1,18 @@
 /* eslint-disable i18next/no-literal-string */
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
+import {
+  Mods,
+  classNames,
+} from 'shared/lib/classNames/classNames';
 
 import { useTheme } from 'app/providers/ThemeProvider';
 import {
-  ReactNode, useCallback, useEffect, useState,
+  ReactNode,
 } from 'react';
-import { Button, ButtonTheme } from '../Button/Button';
+import { useModal } from 'shared/lib/hooks/useModal/useModal';
+import {
+  Button,
+  ButtonTheme,
+} from '../Button/Button';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import styles from './Modal.module.scss';
@@ -19,45 +26,26 @@ interface ModalProps {
 }
 
 export const Modal = (props : ModalProps) => {
+  const {
+    lazy,
+    isOpen,
+    onClose,
+    children,
+    className,
+  } = props;
+
   const { theme } = useTheme();
 
   const {
-    className,
-    children,
+    isMounted,
+    closeHandler,
+  } = useModal({
     isOpen,
     onClose,
-    lazy,
-  } = props;
-
-  const [isMounted, setIsMounted] = useState(false);
+  });
 
   const mods: Mods = {
     [styles.opened]: isOpen,
-  };
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-    }
-  }, [isOpen]);
-
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onClose();
-    }
-  }, [onClose]);
-
-  useEffect(() => {
-    function escapeButtonCloseHandler() {
-      window.addEventListener('keydown', onKeyDown);
-    }
-    escapeButtonCloseHandler();
-  }, [onKeyDown]);
-
-  const closeHandler = () => {
-    if (onClose) {
-      onClose();
-    }
   };
 
   if (lazy && !isMounted) {
