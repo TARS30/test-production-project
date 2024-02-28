@@ -1,14 +1,14 @@
 /* eslint-disable i18next/no-literal-string */
 import {
-  Mods,
-  classNames,
-} from 'shared/lib/classNames/classNames';
-
-import { useTheme } from 'app/providers/ThemeProvider';
-import {
   ReactNode,
 } from 'react';
-import { useModal } from 'shared/lib/hooks/useModal/useModal';
+import {
+  Mods,
+  classNames,
+} from '@/shared/lib/classNames/classNames';
+
+import { useTheme } from '@/app/providers/ThemeProvider';
+import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 
 import {
   Button,

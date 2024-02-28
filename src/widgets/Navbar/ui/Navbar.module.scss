@@ -1,6 +1,13 @@
+.navbarWrapper {
+  display: flex;
+  background: var(--navbar-bg-color);
+}
+
 .navbar {
   height: var(--navbar-height);
   background: var(--navbar-bg-color);
+  max-width: 1100px;
+  margin: 0 auto;
   padding: 20px;
 }
 

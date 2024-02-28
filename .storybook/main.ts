@@ -58,6 +58,11 @@ const config: StorybookConfig = {
     
     config?.resolve?.extensions?.push('.ts', '.tsx', );
 
+    config!.resolve!.alias = {
+      ...config!.resolve!.alias,
+      '@': paths.src,
+    };
+
    /////////////////////////////////////////////////////////////////////////
    //   svg helper
     const imageRule = config.module?.rules?.find(rule => {

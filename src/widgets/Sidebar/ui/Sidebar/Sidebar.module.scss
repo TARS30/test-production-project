@@ -43,4 +43,9 @@
   right: -40px;
   bottom: 40px;
   z-index: var(--sidebar-collapse-button);
+  color: var(--inverted-primary-color);
+
+  &:hover {
+    color: var(--accent-color);
+  }
 }

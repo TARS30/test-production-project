@@ -9,6 +9,8 @@
   z-index: var(--drawer-z-index);
   display: flex;
   align-items: flex-end;
+  scrollbar-color: var(--accent-color) var(--inverted-bg-color);
+  scrollbar-width: thin;
 }
 
 .content {

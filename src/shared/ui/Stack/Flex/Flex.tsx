@@ -1,8 +1,8 @@
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
-
 import {
   DetailedHTMLProps, HTMLAttributes, ReactNode, memo,
 } from 'react';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+
 import styles from './Flex.module.scss';
 
 export type FlexJustify =

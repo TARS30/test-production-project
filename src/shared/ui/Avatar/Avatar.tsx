@@ -1,6 +1,6 @@
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
-
 import { CSSProperties, useMemo } from 'react';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+
 import styles from './Avatar.module.scss';
 
 export enum AvatarSizes {

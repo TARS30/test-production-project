@@ -4,4 +4,6 @@
   height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-color: var(--accent-color) var(--inverted-bg-color);
+  scrollbar-width: thin;
 }

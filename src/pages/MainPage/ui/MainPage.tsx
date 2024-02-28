@@ -1,6 +1,6 @@
-import { Counter } from 'entitiess/Counter';
 import { useTranslation } from 'react-i18next';
-import { Page } from 'widgets/Page/Page';
+import { Counter } from '@/entities/Counter';
+import { Page } from '@/widgets/Page/Page';
 
 const MainPage = () => {
   const { t } = useTranslation();

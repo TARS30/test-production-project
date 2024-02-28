@@ -1,22 +1,22 @@
 import {
+  memo, useCallback,
+} from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { ArticleType } from '@/entities/Article/model/consts/consts';
+import {
   ArticleSortField,
   ArticleSortSelector,
   ArticleTypeTabs,
   ArticleView,
   ArticleViewSelector,
-} from 'entitiess/Article';
-import { ArticleType } from 'entitiess/Article/model/consts/consts';
-import {
-  memo, useCallback,
-} from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { SortOrder } from 'shared/types';
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/Input';
-import { HStack, VStack } from 'shared/ui/Stack';
+} from '@/entities/Article';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { SortOrder } from '@/shared/types';
+import { Card } from '@/shared/ui/Card/Card';
+import { Input } from '@/shared/ui/Input/Input';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 import {
   getArticlesPageOrder,

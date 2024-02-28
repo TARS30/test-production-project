@@ -1,8 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-
 import { memo, useCallback } from 'react';
-import CopyIcon from 'shared/assets/icons/CopyIcon.svg';
 import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
+
+import CopyIcon from '@/shared/assets/icons/CopyIcon.svg';
 import { Button, ButtonTheme } from '../Button/Button';
 import styles from './Code.module.scss';
 

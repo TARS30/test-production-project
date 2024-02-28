@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Link, LinkProps } from 'react-router-dom';
 import { FC, memo, ReactNode } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './AppLink.module.scss';
 
 export enum AppLinkTheme {

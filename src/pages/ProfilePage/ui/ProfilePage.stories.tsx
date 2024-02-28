@@ -1,15 +1,18 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
+
 import ProfilePage from './ProfilePage';
 
-export default {
-  title: 'pages/ProfilePage',
+const meta: Meta<typeof ProfilePage> = {
+  title: 'features/ProfilePage',
   component: ProfilePage,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+};
+
+export default meta;
+
+type Story = StoryObj<typeof ProfilePage>;
+
+export const Primary: Story = {
+  args: {
   },
-} as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
-
-export const Normal = Template.bind({});
-Normal.args = {};
+};

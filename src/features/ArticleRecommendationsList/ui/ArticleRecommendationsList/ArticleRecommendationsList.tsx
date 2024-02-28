@@ -1,8 +1,8 @@
-import { ArticleList, ArticleView } from 'entitiess/Article';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { VStack } from 'shared/ui/Stack';
-import { Text, TextSize } from 'shared/ui/Text/Text';
+import { ArticleList, ArticleView } from '@/entities/Article';
+import { VStack } from '@/shared/ui/Stack';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 import styles from './ArticleRecommendations.module.scss';
 

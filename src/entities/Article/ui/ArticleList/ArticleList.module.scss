@@ -1,0 +1,22 @@
+.WIDE {
+  .card {
+    margin-bottom: 30px;
+  }
+}
+
+.SQUARE {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+
+  .card {
+    display: inline-flex;
+    height: 300px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 40px;
+  }
+}
