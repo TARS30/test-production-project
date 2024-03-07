@@ -9,16 +9,19 @@
     "allowJs": true,
     "strict": true,
     "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
     // Для абсолютного импорта
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "isolatedModules": true,
     /////////////////////////////////////////////////////////////////////////
-    "types": ["vite-plugin-svgr/client"]
+    "types": [
+      "node",
+      "vite-plugin-svgr/client", 
+  ],
     /////////////////////////////////////////////////////////////////////////
   },
   "ts-node": {
