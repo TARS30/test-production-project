@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import CopyIcon from '@/shared/assets/icons/CopyIcon.svg';
+import CopyIcon from '@/shared/assets/icons/CopyIcon.svg?react';
 import { Button, ButtonTheme } from '../Button/Button';
 import styles from './Code.module.scss';
 

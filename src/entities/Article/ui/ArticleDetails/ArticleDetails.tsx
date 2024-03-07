@@ -1,8 +1,8 @@
 import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import CalendarIcon from '@/shared/assets/icons/CalendarIcon.svg';
-import EyeViewsIcon from '@/shared/assets/icons/eyeViews-20-20.svg';
+import CalendarIcon from '@/shared/assets/icons/CalendarIcon.svg?react';
+import EyeViewsIcon from '@/shared/assets/icons/eyeViews-20-20.svg?react';
 import {
   ReducersList,
   DynamicModuleLoader,
