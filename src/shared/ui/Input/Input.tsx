@@ -14,6 +14,7 @@ interface InputProps extends HTMLInputProps{
     type?: string;
     readonly?: boolean;
     'data-testid'?: string;
+    wide?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -26,6 +27,7 @@ export const Input = memo((props: InputProps) => {
     disabled,
     readonly,
     'data-testid': dataTestId,
+    wide,
   } = props;
   const ref = useRef<HTMLInputElement>(null);
 
@@ -35,6 +37,7 @@ export const Input = memo((props: InputProps) => {
 
   const mods: Mods = {
     [styles.readonly]: readonly,
+    [styles.wide]: wide,
   };
 
   return (

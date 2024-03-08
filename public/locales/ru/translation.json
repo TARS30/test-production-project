@@ -61,5 +61,6 @@
   "create-article": "Создать статью",
   "type-comment": "Введите комментарий",
   "admin": "Админ",
-  "you-don-t-have-access-to-this-page": "У вас нет доступа к этой странице"
+  "you-don-t-have-access-to-this-page": "У вас нет доступа к этой странице",
+  "enter-your-feedback": "Введите свой отзыв"
 }
