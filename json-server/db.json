@@ -8,22 +8,22 @@
       "href": "http://localhost:3000/admin"
     },
     {
-      "id":"2",
+      "id": "2",
       "title": "Notification 2",
       "description": "Something happend #2",
-      "userId":"2"
+      "userId": "2"
     },
     {
-      "id":"3",
+      "id": "3",
       "title": "Notification 3",
       "description": "Something happend #3",
-      "userId":"3"
+      "userId": "3"
     },
     {
-      "id":"4",
+      "id": "4",
       "title": "Notification 4",
       "description": "Something happend #4",
-      "userId":"1"
+      "userId": "1"
     },
     {
       "id": "1",
@@ -33,22 +33,22 @@
       "href": "http://localhost:3000/admin"
     },
     {
-      "id":"2",
+      "id": "2",
       "title": "Notification 2",
       "description": "Something happend #2",
-      "userId":"2"
+      "userId": "2"
     },
     {
-      "id":"3",
+      "id": "3",
       "title": "Notification 3",
       "description": "Something happend #3",
-      "userId":"3"
+      "userId": "3"
     },
     {
-      "id":"4",
+      "id": "4",
       "title": "Notification 4",
       "description": "Something happend #4",
-      "userId":"1"
+      "userId": "1"
     },
     {
       "id": "1",
@@ -58,22 +58,22 @@
       "href": "http://localhost:3000/admin"
     },
     {
-      "id":"2",
+      "id": "2",
       "title": "Notification 2",
       "description": "Something happend #2",
-      "userId":"2"
+      "userId": "2"
     },
     {
-      "id":"3",
+      "id": "3",
       "title": "Notification 3",
       "description": "Something happend #3",
-      "userId":"3"
+      "userId": "3"
     },
     {
-      "id":"4",
+      "id": "4",
       "title": "Notification 4",
       "description": "Something happend #4",
-      "userId":"1"
+      "userId": "1"
     },
     {
       "id": "1",
@@ -83,22 +83,22 @@
       "href": "http://localhost:3000/admin"
     },
     {
-      "id":"2",
+      "id": "2",
       "title": "Notification 2",
       "description": "Something happend #2",
-      "userId":"2"
+      "userId": "2"
     },
     {
-      "id":"3",
+      "id": "3",
       "title": "Notification 3",
       "description": "Something happend #3",
-      "userId":"3"
+      "userId": "3"
     },
     {
-      "id":"4",
+      "id": "4",
       "title": "Notification 4",
       "description": "Something happend #4",
-      "userId":"1"
+      "userId": "1"
     }
   ],
   "posts": [
@@ -743,6 +743,45 @@
       "city": "samara3",
       "username": "MANAGER",
       "avatar": "https://i.pinimg.com/1200x/2f/d2/71/2fd2711103dd690793534616614448da.jpg"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 5,
+      "feedback": "Good article2",
+      "userId": "2",
+      "articleId": "2"
+    },
+    {
+      "articleId": "2",
+      "rate": 4,
+      "userId": "1",
+      "feedback": "qweqweqwe",
+      "id": "QL3u_sm"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good profile",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 5,
+      "feedback": "Good profile2",
+      "userId": "2",
+      "profileId": "2"
     }
   ]
 }

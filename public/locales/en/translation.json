@@ -62,5 +62,8 @@
   "type-comment": "Type comment",
   "admin": "Admin",
   "you-don-t-have-access-to-this-page": "You don`t have access to this page",
-  "enter-your-feedback": "Enter your feedback"
+  "enter-your-feedback": "Enter your feedback",
+  "rate-the-article": "Rate the article",
+  "leave-the-feedback-about-article": "Leave the feedback about article",
+  "thanks-for-rate": "Thanks for rate"
 }

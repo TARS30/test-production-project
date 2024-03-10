@@ -11,6 +11,7 @@ import { Page } from '@/widgets/Page/Page';
 import { ArticleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { ArticleRating } from '@/features/articleRating';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -26,7 +27,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
   if (!id) {
     return (
-
       <Page className={classNames('', {}, [className])}>
         <Text
           align={TextAlign.CENTER}
@@ -36,12 +36,14 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
       </Page>
     );
   }
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames('', {}, [className])}>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <ArticleRecommendationsList />
+        <ArticleRating articleId={id} />
         <ArticleDetailsComments id={id} />
       </Page>
     </DynamicModuleLoader>

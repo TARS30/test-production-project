@@ -62,5 +62,8 @@
   "type-comment": "Введите комментарий",
   "admin": "Админ",
   "you-don-t-have-access-to-this-page": "У вас нет доступа к этой странице",
-  "enter-your-feedback": "Введите свой отзыв"
+  "enter-your-feedback": "Введите свой отзыв",
+  "rate-the-article": "Оцените статью",
+  "leave-the-feedback-about-article": "Оставьте отзыв о статье",
+  "thanks-for-rate": "Спасибо за оценку"
 }
