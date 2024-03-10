@@ -766,22 +766,50 @@
       "userId": "1",
       "feedback": "qweqweqwe",
       "id": "QL3u_sm"
+    },
+    {
+      "articleId": "3",
+      "rate": 1,
+      "userId": "1",
+      "feedback": "sad",
+      "id": "9g_SAuR"
     }
   ],
   "profile-ratings": [
     {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Good profile",
+      "profileId": "1",
+      "rate": 5,
       "userId": "1",
-      "profileId": "1"
+      "feedback": "si",
+      "id": 1
     },
     {
-      "id": "2",
+      "profileId": "2",
+      "rate": 1,
+      "userId": "1",
+      "feedback": "ne",
+      "id": 2
+    },
+    {
+      "profileId": "3",
+      "rate": 3,
+      "userId": "1",
+      "feedback": "pide",
+      "id": 3
+    },
+    {
+      "profileId": "3",
       "rate": 5,
-      "feedback": "Good profile2",
-      "userId": "2",
-      "profileId": "2"
+      "userId": "3",
+      "feedback": "eee",
+      "id": 4
+    },
+    {
+      "profileId": "1",
+      "rate": 1,
+      "userId": "3",
+      "feedback": "foo",
+      "id": 5
     }
   ]
 }
