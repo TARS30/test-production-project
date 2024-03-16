@@ -777,13 +777,6 @@
   ],
   "profile-ratings": [
     {
-      "profileId": "1",
-      "rate": 5,
-      "userId": "1",
-      "feedback": "si",
-      "id": 1
-    },
-    {
       "profileId": "2",
       "rate": 1,
       "userId": "1",
