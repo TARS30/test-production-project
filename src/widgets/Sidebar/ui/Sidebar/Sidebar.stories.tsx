@@ -4,8 +4,8 @@ import {
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { Sidebar } from './Sidebar';
+import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Sidebar> = {
   title: 'widget/Sidebar',

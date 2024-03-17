@@ -1,7 +1,11 @@
 import { useSelector } from 'react-redux';
 import { ArticleList } from '@/entities/Article';
 import { ErrorPage } from '@/widgets/ErrorPage';
-import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articlesPageSelectors';
+import {
+  getArticlesPageError,
+  getArticlesPageIsLoading,
+  getArticlesPageView,
+} from '../../model/selectors/articlesPageSelectors';
 import { getArticles } from '../../model/slices/articlesPageSlice';
 
 interface ArticleInfiniteListProps {
