@@ -1,15 +1,15 @@
-import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { MyDropdown } from '@/shared/ui/Popups';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { MyDropdown } from '@/shared/ui/Popups';
 import styles from './AvatarDropdown.module.scss';
 
 interface AvatarDropdownProps {
@@ -39,11 +39,11 @@ export const AvatarDropdown = (props: AvatarDropdownProps) => {
       items={[
         ...(adminIsVisible ? [{
           content: t('admin'),
-          href: RoutePath.admin_panel_page,
+          href: getRouteAdmin(),
         }] : []),
         {
           content: t('profile'),
-          href: RoutePath.profile + authData!.id,
+          href: getRouteProfile(authData!.id),
         },
         {
           content: t('logout'),

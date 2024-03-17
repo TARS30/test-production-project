@@ -40,10 +40,6 @@ export const Select = <T extends string>({
     </option>
   )), [options]);
 
-  const mods: Mods = {
-
-  };
-
   return (
     <HStack gap="4">
       {label && (

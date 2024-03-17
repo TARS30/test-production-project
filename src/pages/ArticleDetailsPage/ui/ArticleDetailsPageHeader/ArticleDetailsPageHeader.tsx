@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getArticleDetailsData } from '@/entities/Article';
+import { getRouteArticles, getRouteArticlesEdit } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { RoutePath } from '@/shared/const/router';
 import { Button } from '@/shared/ui/Button/Button';
 import { getCanEditArticle } from '../../model/selectors/article/article';
 import styles from './ArticleDetailsPageHeader.module.scss';
@@ -26,12 +26,12 @@ export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) =
   const navigate = useNavigate();
 
   const onBack = useCallback(() => {
-    navigate(RoutePath.articles);
+    navigate(getRouteArticles());
   }, [navigate]);
 
   const onEditArticle = useCallback(() => {
-    navigate(`${RoutePath.article_details}${article?.id}/edit`);
-  }, [article?.id, navigate]);
+    navigate(getRouteArticlesEdit(article!.id));
+  }, [article, navigate]);
 
   return (
     <header className={classNames(styles.ArticleDetailsPageHeader, {}, [className])}>

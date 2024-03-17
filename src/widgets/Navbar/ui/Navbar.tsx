@@ -1,15 +1,15 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import {
   getUserAuthData,
 } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticlesCreate } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { HStack } from '@/shared/ui/Stack';
@@ -54,7 +54,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             />
             <AppLink
               className={styles.createLink}
-              to={RoutePath.article_create}
+              to={getRouteArticlesCreate()}
             >
               {t('create-article')}
             </AppLink>
