@@ -4,8 +4,8 @@ import squareIcon from '@/shared/assets/icons/squareIcon.svg?react';
 import wideIcon from '@/shared/assets/icons/wideIcon.svg?react';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { Icon } from '@/shared/ui/Icon/Icon';
-import { ArticleView } from '../../model/consts/consts';
 import styles from './ArticleViewSelector.module.scss';
+import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
     className?: string;
