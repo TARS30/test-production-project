@@ -1,28 +1,47 @@
 /* eslint-disable i18next/no-literal-string */
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { USER_COUNTER_KEY } from '@/shared/const/localStorage';
 import { Button } from '@/shared/ui/Button/Button';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
-import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
-import { counterActions } from '../model/slice/CounterSlice';
+import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
+import { useCounterActions } from '../model/slice/CounterSlice';
 
 export const Counter = () => {
-  const dispatch = useDispatch();
-  const counterValue = useSelector(getCounterValue);
+  const counterValue = useCounterValue();
 
   useEffect(() => {
     localStorage.setItem(USER_COUNTER_KEY, '0');
   }, []);
 
-  const increment = () => {
-    dispatch(counterActions.increment());
+  const {
+    add,
+    decrement,
+    increment,
+    remove,
+    reset,
+  } = useCounterActions();
+
+  const incrementHandler = () => {
+    increment();
   };
-  const decrement = () => {
-    dispatch(counterActions.decrement());
+  const decrementHandler = () => {
+    decrement();
   };
-  const reset = () => {
-    dispatch(counterActions.reset());
+  const resetHandler = () => {
+    reset();
+  };
+  const addTen = () => {
+    add(10);
+  };
+  const removeTen = () => {
+    remove(10);
+  };
+  const addHundred = () => {
+    add(100);
+  };
+  const removeHundred = () => {
+    remove(100);
   };
 
   const counterLessZero = counterValue <= -1;
@@ -39,8 +58,20 @@ export const Counter = () => {
         ? (
           <>
             <h1 data-testid="value-title">{counterValue}</h1>
-            <Button data-testid="increment-btn" onClick={increment}>+</Button>
-            <Button data-testid="decrement-btn" onClick={decrement}>-</Button>
+            <VStack>
+              <HStack>
+                <Button data-testid="increment-btn" onClick={incrementHandler}>+</Button>
+                <Button data-testid="decrement-btn" onClick={decrementHandler}>-</Button>
+              </HStack>
+              <HStack>
+                <Button onClick={addTen}>+10</Button>
+                <Button onClick={removeTen}>-10</Button>
+              </HStack>
+              <HStack>
+                <Button onClick={addHundred}>+100</Button>
+                <Button onClick={removeHundred}>-100</Button>
+              </HStack>
+            </VStack>
             {counterMoreThanOne && (
             <Text
               theme={TextTheme.CORRECT}
@@ -52,7 +83,7 @@ export const Counter = () => {
         ) : (
           <>
             <Text text="Ф - ФСЁ. А ХУЛЬ ТЫ ДУМАЛ?" />
-            <Button onClick={reset}>reset button</Button>
+            <Button onClick={resetHandler}>reset button</Button>
           </>
 
         )}
