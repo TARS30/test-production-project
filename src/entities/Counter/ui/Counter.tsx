@@ -91,7 +91,7 @@ export const Counter = () => {
       && (
         <Text
           theme={TextTheme.ERROR}
-          text="ТЫ ШО ЕБАНУТЫЙ В МИНУС СЧЕТЧИК СТАВИТЬ?"
+          text="ТЫ ШО ЕБАНУТЫЙ ХТОШ СЧИТАЕТ В МИНУС?"
         />
       ) }
 

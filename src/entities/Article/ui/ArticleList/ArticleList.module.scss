@@ -16,11 +16,16 @@
   .card {
     display: inline-flex;
     height: 300px;
+    z-index: 100000;
+
+    &:hover {
+      scale: 1.01;
+    }
   }
 
   .row {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: start;
     gap: 40px;
   }
 }

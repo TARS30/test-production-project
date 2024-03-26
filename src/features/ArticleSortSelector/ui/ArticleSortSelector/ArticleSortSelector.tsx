@@ -28,12 +28,12 @@ export const ArticleSortSelector = (props: ArticleSortSelectorProps) => {
 
   const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
     {
-      value: 'asc',
-      content: t('ascending'),
-    },
-    {
       value: 'desc',
       content: t('descending'),
+    },
+    {
+      value: 'asc',
+      content: t('ascending'),
     },
   ], [t]);
 
