@@ -7,18 +7,15 @@
 .app_modal,
 .app_drawer {
   font: var(--font-m);
-  font: consolas, Ubuntu, serif;
   color: var(--primary-color);
 }
 
 .app {
   min-height: 100vh;
-  font: consolas, Ubuntu, serif;
   background: var(--bg-color);
 }
 
 .content-page {
-  font: consolas, Ubuntu, serif;
   display: flex;
   max-width: 900px;
   margin: 0 auto;
