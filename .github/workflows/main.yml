@@ -63,7 +63,6 @@ jobs:
     strategy:
       matrix:
         node-version: [ 17.x ]
-        # node-version: [ 18.x ]
     steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}
@@ -71,7 +70,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm ci
+        run: npm ci --force
       - name: build production project
         run: npm run build:prod
         if: always()
@@ -79,16 +78,10 @@ jobs:
         run: npm run storybook:build
         if: always()
       - name: screenshot testing
-        run: npm run test:ui
+        run: npm run test:ui:ci
         if: always()
-      - name: unit testing
-        if: always()
-        run: npm run test:unit
       - name: Generate HTML report
         run: npm run test:ui:report
-        if: always()
-      - name: move loki
-        run: mv .loki reports/
         if: always()
       - name: Setup Pages
         uses: actions/configure-pages@v2
@@ -97,7 +90,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         if: always()
         with:
-          path: 'reports'
+          path: '.loki'
       - name: Deploy to GitHub Pages
         id: deployment
         if: always()
@@ -108,7 +101,6 @@ jobs:
     strategy:
       matrix:
         node-version: [ 17.x ]
-        # node-version: [ 18.x ]
     steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}
@@ -116,9 +108,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm ci
+        run: npm ci --force
       - name: linting typescript
         run: npm run lint:ts
         if: always()
       - name: linting css
         run: npm run lint:scss
+      - name: unit testing
+        if: always()
+        run: npm run test:unit
