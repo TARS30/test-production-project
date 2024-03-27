@@ -13,12 +13,13 @@ const preview = {
         date: /Date$/i,
       },
     },
+    layout: 'fullscreen',
   },
   decorators: [
     ThemeDecorator(Theme.LIGHT),
     RouterDecorator,
     SuspenseDecorator,
-    StyleDecorator,
+    // StyleDecorator,
   ],
 };
 
