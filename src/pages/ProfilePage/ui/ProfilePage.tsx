@@ -19,7 +19,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   }
 
   return (
-    <Page className={className}>
+    <Page
+      data-testid="ProfilePage"
+      className={className}
+    >
       <VStack
         wide
         gap="16"

@@ -16,8 +16,9 @@ import { StateScheme } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import styles from './Page.module.scss';
 import { ScrollSaverActions, getScrollSaverByPath } from './ScrollSaver';
+import { TestProps } from '@/shared/types/tests';
 
-interface PageProps {
+interface PageProps extends TestProps {
     className?: string;
     children: ReactNode;
     onScrollEnd?:() => void
@@ -58,6 +59,7 @@ export const Page = memo((props: PageProps) => {
 
   return (
     <main
+      data-testid={props['data-testid'] ?? 'Page'}
       onScroll={onScroll}
       ref={wrapperRef}
       className={classNames(styles.Page, {}, [className])}

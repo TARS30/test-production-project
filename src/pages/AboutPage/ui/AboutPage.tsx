@@ -7,7 +7,7 @@ export default function AboutPage() {
   document.title = 'About us';
 
   return (
-    <Page>
+    <Page data-testid="AboutPage">
       <div>{t('cat')}</div>
       <div>{t('cat')}</div>
       <div>{t('cat')}</div>
