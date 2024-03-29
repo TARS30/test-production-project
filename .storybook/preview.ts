@@ -16,17 +16,11 @@ const preview: Preview = {
     },
     layout: 'fullscreen'
   },
-  //  decorators: [
-  //   ThemeDecorator(Theme.LIGHT),
-  //   RouterDecorator,
-  //   SuspenseDecorator,
-  //   StyleDecorator,
-  // ],
-  decorators: [
-    (Story) => Story(StyleDecorator),
+   decorators: [
+    ThemeDecorator(Theme.LIGHT),
     RouterDecorator,
     SuspenseDecorator,
-    ThemeDecorator(Theme.LIGHT)
+    StyleDecorator,
   ],
 };
 
