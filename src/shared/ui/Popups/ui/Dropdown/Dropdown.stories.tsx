@@ -13,23 +13,21 @@ const Template: ComponentStory<typeof MyDropdown> = (args) => (
   <MyDropdown {...args} />
 );
 
-const data = JSON.stringify([
-  {
-    content: '1231231231',
-  },
-  {
-    content: 'asdasdasdasd',
-  },
-  {
-    content: '1231231231',
-  },
-]);
-
 export const Story = Template.bind({});
 Story.args = {
 
   trigger: <Button>open</Button>,
-  items: JSON.parse(data),
+  items: [
+    {
+      content: '1231231231',
+    },
+    {
+      content: 'asdasdasdasd',
+    },
+    {
+      content: '1231231231',
+    },
+  ],
 };
 export const TopLeft = Template.bind({});
 TopLeft.args = {
