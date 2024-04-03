@@ -1,16 +1,19 @@
 import { memo, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Page } from '@/widgets/Page/Page';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { VStack } from '@/shared/ui/Stack';
+import { Page } from '@/widgets/Page/Page';
 import { fetchNextArticlePage } from '../model/services/fetchNextArticlePage/fetchNextArticlePage';
+import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
 import { articlePageReducer } from '../model/slices/articlesPageSlice';
 import ArticleInfiniteList from './ArticleInfiniteList/ArticleInfiniteList';
 import { ArticlesPageFilters } from './ArticlesPageFilters/ArticlesPageFilters';
-import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
 
 interface ArticlesPageProps {
   className?: string;
